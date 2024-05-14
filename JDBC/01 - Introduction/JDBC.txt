@@ -1,0 +1,7 @@
+1) What is JDBC?
+- JDBC stands for Java Database Connectivity.
+- It is a Java API(Application Programming Interface) that allows Java programs to 
+  access and manipulate data stored in databases, enabling developers to execute 
+  SQL queries, ritrieve results, and perform database operations programmatically.
+- In essens, JDBC acts as a bridge between Java applications and various database
+  management systems, facilitating seamless interaction and data exchange.
