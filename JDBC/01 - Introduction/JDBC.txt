@@ -5,3 +5,7 @@
   SQL queries, ritrieve results, and perform database operations programmatically.
 - In essens, JDBC acts as a bridge between Java applications and various database
   management systems, facilitating seamless interaction and data exchange.
+
+
+2) Why JDBC?
+- 
