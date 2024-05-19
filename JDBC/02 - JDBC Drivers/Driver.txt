@@ -33,7 +33,7 @@ Connection con = DriverManager.getConnection("jdbc:odbc:DataSourceName", "user",
 
 Type-2: Native-API Driver(Partial Java Driver)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- The Type-2 driver convert, JDBC calls into dabase-specific calls using native libraries 
+- The Type-2 driver convert, JDBC calls into database-specific calls using native libraries 
   provided by the database vendor.
 - Requires native database libraries on the client machine.
 
