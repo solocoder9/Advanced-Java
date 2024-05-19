@@ -1,0 +1,89 @@
+JDBC Driver
+-----------
+- A JDBC driver is a software compnent that enables Java application to interact
+  with databases.
+- It translates Java calls to database-specific calls, Thus allowing Java programs
+  to exicute SQL queries and retrive result.
+- There are 4 types of JDBC drivers:-
+            Type-1: JDBC-ODBC Bridge Driver
+            Type-2: Native-API Driver(Partial Java Driver)
+            Type-3: Network Protocol Driver(Fully Java Driver)
+            Type-4: Thin Driver(Pure Java Driver)
+
+
+Type-1: JDBC-ODBC Bridge Driver
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- The Type-1 driver translate JDBC calls into ODBC(Open Database Connection) calls, 
+  and then used the ODBC driver to communicate with the database.
+- It requires an ODBC driver to be installed on the client machine.
+
+Advantages:
+- Allow acces to almost any database since ODBC is widely supported.
+- Can be useful fo testing purposes when no other driver is available.
+
+Disadvantages:
+- Performance is relatively slow due to overhead of the translation process.
+- Depend on native ODBC drivers, which reduce Portability.
+- Not suitable for production environment.
+
+Example usage:
+Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+Connection con = DriverManager.getConnection("jdbc:odbc:DataSourceName", "user", "password");
+
+
+Type-2: Native-API Driver(Partial Java Driver)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- The Type-2 driver convert, JDBC calls into dabase-specific calls using native libraries 
+  provided by the database vendor.
+- Requires native database libraries on the client machine.
+
+Advantages:
+- Performance is better that Type-1 since it reduce ODBC overhead.
+- Can take advantage of database-spefific features provided by native libraries.
+
+Disadvantages:
+- Requres native library installation on the client, making it less prtable.
+- Each database requires a specific Type-2 driver.
+
+Example Usage:
+Class.forName("oracle.jdbc.driver.OracleDriver");
+Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "user", "password");
+
+
+Type-3: Network Protocol Driver(Fully Java Driver)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- The Type-3 driver uses a three-tier approach where JDBC calls are sent to a middle-tier 
+  server(application server), wheich tehn translates these calls to database-specific calls.
+- The middle-tier server handles the communication with the database.
+
+Advantages:
+- Completely written in Java, which makes it platform-independent.
+- No need for database vendor-specific libraries on the client machine.
+- Can connect to multiple databases using a single driver.
+
+Disadvantages:
+- Performance can be affected by network latency due to the additional network round-trip 
+  to the middleware server.
+- Requires a middleware server setup, which can add complexity.
+
+Example Usage:
+Class.forName("com.ibm.db2.jcc.DB2Driver");
+Connection con = DriverManager.getConnection("jdbc:db2://server:port/database", "user", "password");
+
+
+Type-4: Thin Driver(Pure Java Driver)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- The Type-4 driver converts JDBC calls directly into the database-specific protocol.
+- It communicates directly with the database using the database's proprietary protocol.
+
+Advantages:
+- Completely written in Java, making it platform-independent. 
+- Offers the best performance as it eliminates the need for native libraries and middleware servers.
+- Easier to deploy and maintain.
+
+Disadvantages:
+- Database-specific, meaning each database requires its own Type-4 driver.
+
+Example Usage:
+Class.forName("com.mysql.cj.jdbc.Driver");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbname", "user", "password");
