@@ -31,9 +31,9 @@ public class InsertData {
 			int rowsAffected = stmt.executeUpdate(query);
 
 			if (rowsAffected > 0) {
-				System.out.println("Insert successfull " + rowsAffected + " row(s) affected. ");
+				System.out.println("Insertion successfull " + rowsAffected + " row(s) affected. ");
 			} else {
-				System.out.println("Insert Unsuccessful");
+				System.out.println("Insertion unsuccessful");
 			}
 			
 			// close the connections
