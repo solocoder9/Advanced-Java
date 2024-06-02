@@ -33,9 +33,9 @@ public class InsertData {
 			if (rowsAffected > 0) {
 				System.out.println("Insertion successfull " + rowsAffected + " row(s) affected. ");
 			} else {
-				System.out.println("Insertion unsuccessful");
+				System.out.println("Insertion failed!!");
 			}
-			
+
 			// close the connections
 			stmt.close();
 			con.close();
