@@ -1,0 +1,95 @@
+Connection
+----------
+- The Connection interface in JDBC represents a session with a specific database. 
+- It is part of the java.sql package and provides methods for interacting with the database, including 
+  executing SQL queries, retrieving metadata, and managing transactions. 
+- Each Connection object is associated with a single database and maintains the session context for the 
+  database operations performed within that connection.
+  
+Methods of Connection Interface
+--------------------------------
+Creating Statement
+~~~~~~~~~~~~~~~~~~
+	1> Statement createStatement()
+	- Create 'Statement' object for sending SQL statements to the database.
+	
+	2> PreparedStatement prepareStatement(String sql)
+	- Creates a 'preparedStatement' object for ending parameterized SQL statements to the database.
+	
+	3> CallableStatement prepareCall(String sql)
+	- Creates a 'CallableStatement' object for calling stored procedures in the database.
+	
+Example: -
+	Statement stmt = connection.createStatement();
+	PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM mytable WHERE id = ?");
+	CallableStatement cstmt = connection.prepareCall("{call myStoredProc(?, ?)}");
+	
+	
+Transaction Control
+~~~~~~~~~~~~~~~~~~~
+	1> void setAutoCommit(boolean autoCommit): Enables or disables auto-commit mode.
+	
+	2> void commit(): Commits the current transaction.
+	
+	3> void rollback(): Rolls back the current transaction.
+	
+	4> void rollback(Savepoint savepoint): Rolls back to the specified savepoint.
+	
+	5> Savepoint setSavepoint(): Creates an unnamed savepoint.
+	
+	6> Savepoint setSavepoint(String name): Creates a named savepoint.
+	
+Example: -
+	connection.setAutoCommit(false);
+	try {
+    	// Execute SQL operations...
+    	connection.commit();
+	} catch (SQLException e) {
+    	connection.rollback(); // Rollback if something goes wrong
+	}
+	
+	
+Connection Management
+~~~~~~~~~~~~~~~~~~~~~
+	1> void close(): Closes the connection and releases resources.
+	
+	2> boolean isClosed(): Checks if the connection is closed.
+	
+	3> boolean isValid(int timeout): Checks if the connection is still valid within a given timeout period.
+	
+Example: -
+	if (connection.isValid(10)) { // Check if the connection is valid within 10 seconds
+    	System.out.println("Connection is valid.");
+	}
+	connection.close(); // Close the connection when done
+	
+	
+
+Retrieving Metadata
+~~~~~~~~~~~~~~~~~~~
+	1> DatabaseMetaData getMetaData(): Retrieves metadata about the database, such as its capabilities, 
+	structure, and supported features.
+	
+Example: -
+	DatabaseMetaData metaData = connection.getMetaData();
+	System.out.println("Driver Name: " + metaData.getDriverName());
+	
+	
+Connection Properties
+~~~~~~~~~~~~~~~~~~~~~
+	1> void setReadOnly(boolean readOnly): Sets the connection to be read-only or read/write.
+	
+	2> boolean isReadOnly(): Checks if the connection is read-only.
+	
+	3> void setCatalog(String catalog): Sets the catalog for the connection.
+	
+	4> String getCatalog(): Retrieves the current catalog name.
+	
+	5> void setTransactionIsolation(int level): Sets the transaction isolation level for the connection.
+	
+	5> int getTransactionIsolation(): Retrieves the current transaction isolation level.
+	
+Example: - 
+	connection.setReadOnly(true); // Set the connection to read-only mode
+	connection.setCatalog("mycatalog"); // Set the current catalog
+	
