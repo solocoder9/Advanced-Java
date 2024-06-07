@@ -1,0 +1,62 @@
+DriverManager
+-------------
+- DriverManager is a class in the java.sql package of the JDBC API that handles the management of a 
+  list of database drivers and the establishment of connections to the databases. 
+- It acts as a service provider for managing a set of database drivers and facilitating a connection 
+  between a Java application and a database.
+  
+ Methods of DriverManager
+ ~~~~~~~~~~~~~~~~~~~~~~~~
+ - Key methods of DriverManager class 
+ 		1> registerDriver(Driver driver)
+ 		2> getConnection(String url)
+ 		3> getConnection(String url, String user, String password)
+ 		4> getDrivers()
+ 		5> setLoginTimeout(int seconds)
+ 		6> setLogWriter(PrintWriter out)
+ 		
+ 1> registerDriver(Driver driver)
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ - This method is used to register a given driver with the `DriverManager`.
+ - Typically, drivers register themselves with the `DriverManager` automatically when their class is loaded. 
+ - This happens through a static initialization block in the driver's class.
+ - For instance, when you load a JDBC driver class using `Class.forName("com.example.Driver")`, the driver 
+   class's static block is executed, which calls `DriverManager.registerDriver` internally.
+- Example:
+	DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
+	
+	
+2> getConnection(String url)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Use to establish a connection to the given database URL.
+- Example:
+	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb");
+	
+
+3> getConnection(String url, String username, String passoword)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Use to establish a connection to the given database URL using username and password.
+- Example:
+	Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "user", "password");
+	
+	
+4> getDrivers()
+~~~~~~~~~~~~~~~
+- Use to retrieves an enumeration of the currently registered JDBC driver.
+- Example: 
+	Enumeration<Driver> drivers = DriverManager.getDrivers();
+	while (drivers.hasMoreElements()) {
+    	Driver driver = drivers.nextElement();
+    	System.out.println(driver.getClass().getName());
+	}
+	
+	
+5> setLoginTimeout(int seconds)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Use to set the maximum time in seconds that a driver will wait while attempting to connect to a database.
+- Example:
+	DriverManager.setLoginTimeout(30); // 30 seconds timeout
+	
+	
+
+	
