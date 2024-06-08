@@ -1,0 +1,24 @@
+Statement
+---------
+- The 'Statement' interface in JDBC is a fundamental component used to execute SQL query against a database.
+- It is part of the 'java.sql' package and provides methods to execute static SQL queries, retrieve results,
+  and manage SQL execution directly.
+- Basically, the Statement interface is designed for executing simple SQL queries without parameters.
+
+Methods of Statement
+--------------------
+Execute Query
+~~~~~~~~~~~~
+
+	1> ResultSet executeQuery(String sql): 
+	- Execute an SQL 'SELECT' query and returns the result as 'ResultSet'.
+	
+	2> int executeUpdate(String sql): 
+	- Executes an SQL 'INSERT', 'UPDATE', or 'DELETE' statement , or an SQL statement that returns nothing, 
+	  like DDL statement(e.g., 'CREATE TABLE').
+	- It returns the number of rows affected.
+	
+	3> boolean execute(String sql):
+	- Executes an SQL statement that may return multiple results. 
+	- It returns 'true' if the first result is a 'ResultSet', or 'false' if the result is an update count or
+	  there are no results.
