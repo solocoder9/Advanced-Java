@@ -1,0 +1,13 @@
+Statement: 
+----------
+- Basic SQL execution, best for simple, static queries without parameters.
+
+PreparedStatement: 
+-----------------
+- For parameterized, precompiled SQL queries, providing security (against SQL injection) and performance 
+  benefits, especially when the same query is executed multiple times with different parameters.
+
+CallableStatement: 
+------------------
+- Designed for executing stored procedures, handling complex SQL logic encapsulated in the database with 
+  support for IN, OUT, and INOUT parameters.
