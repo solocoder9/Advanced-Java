@@ -65,3 +65,13 @@ Resource Management
 Example:-
 	pstmt.close(); // Important to close to release resources
 	
+
+=============================================================================================================
+Summary
+-------
+- PreparedStatement is a powerful JDBC interface for executing parameterized SQL queries.
+- It enhances performance by precompiling SQL statements and reduces the risk of SQL injection.
+- It supports type-safe setting of parameters, batch processing, and simplifies the execution of repeated queries 
+  with different parameters.
+- Using PreparedStatement is recommended for any SQL execution that involves parameters or needs to be executed 
+  multiple times.
