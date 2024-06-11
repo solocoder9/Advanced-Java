@@ -1,0 +1,67 @@
+PreparedStatement
+-----------------
+- The 'PreparedStatement' interface is an advanced JDBC feature of the 'java.sql. package that represents
+  a pre-compiled SQL statement.
+- It specifically designed to execute parameterized queries, providing better performance and security 
+  compared to 'Statement' interface.
+- the primary advantage of using 'PreparedStatement' is its ability to handle dynamic queries efficiently, 
+  which include parameters(placeholder(?)) that can be set at runtime.
+  
+  
+Methods of PreparedStatement
+----------------------------
+Setting Parameter
+~~~~~~~~~~~~~~~~~
+  	1> void setInt(int parameterIndex, int value): Sets an integer parameter.
+  	
+	2> void setString(int parameterIndex, String value): Sets a string parameter.
+	
+	3> void setDouble(int parameterIndex, double value): Sets a double parameter.
+	
+	There are other setter methods for various data types (setBoolean, setDate, setTimestamp, etc.).
+	
+Example:-
+	pstmt.setInt(1, 07); // Sets the first placeholder to an integer value
+	pstmt.setString(2, "Dhoni"); // Sets the second placeholder to a string value
+	
+	
+	
+Executing Queries
+~~~~~~~~~~~~~~~~~
+	1> ResultSet executeQuery(): Executes a SELECT query and returns the result as a ResultSet.
+	
+	2> int executeUpdate(): Executes an INSERT, UPDATE, or DELETE statement and returns the number of affected rows.
+	
+	3> boolean execute(): Executes any SQL statement and returns true if the first result is a ResultSet, 
+	   otherwise returns false.
+	   
+Example:-
+	ResultSet rs = pstmt.executeQuery(); // For SELECT statements
+	int rowsAffected = pstmt.executeUpdate(); // For INSERT, UPDATE, DELETE statements
+	
+	
+	
+Batch Processing
+~~~~~~~~~~~~~~~~
+	1> void addBatch(): Adds the current set of parameters to the batch of commands to be executed.
+	
+	2> int[] executeBatch(): Executes all the commands in the current batch and returns an array of update counts.
+	
+Example:-
+	pstmt.setString(1, "Alice");
+	pstmt.setDouble(2, 80000);
+	pstmt.addBatch(); // Adds to batch
+	pstmt.setString(1, "Bob");
+	pstmt.setDouble(2, 90000);
+	pstmt.addBatch(); // Adds to batch
+	int[] updateCounts = pstmt.executeBatch(); // Executes all added batches
+	
+	
+	
+Resource Management
+~~~~~~~~~~~~~~~~~~~
+	1> void close(): Closes the PreparedStatement and releases the resources it holds.
+	
+Example:-
+	pstmt.close(); // Important to close to release resources
+	
