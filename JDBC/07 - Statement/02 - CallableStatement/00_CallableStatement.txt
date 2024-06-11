@@ -1,0 +1,32 @@
+CallableStatement
+-----------------
+- CallableStatement is an interface provided by the JDBC API that allows Java applications to execute 
+  SQL stored procedures and functions in a relational database.
+- It extends the 'PraparedStatement' interface, adding methods to handle the input and output parameters
+  of stored procedures.
+- Syntax 
+	{call procedure_name(?, ?, ...)}
+	
+Stored Procedures
+~~~~~~~~~~~~~~~~~
+- These are pre-compiled collections of SQL statement stored in the database.
+- They can perform operations such as querying, inserting, updating, and deleting data.
+- It is basically used to perform business logic.
+
+Functions
+~~~~~~~~~
+- This is similar to Stored procedures but typically return a single value and can be used in SQL 
+  expressions.
+- It is basically used to perform calculation.
+
+
+=======================================================================================================
+Summary
+~~~~~~~
+- CallableStatement is used to execute stored procedures and functions in a database.
+- It supports input, output, and input-output parameters.
+- Syntax for stored procedures is {call procedure_name(?, ?, ...)}.
+- It offers methods to set and retrieve parameters, register output parameters, and execute the procedure.
+- Advantages include better performance, maintainability, and security.
+- Example usage involves connecting to the database, setting parameters, executing the procedure, and 
+  retrieving results.
