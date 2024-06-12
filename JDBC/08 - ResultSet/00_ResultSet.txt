@@ -1,0 +1,58 @@
+ResultSet
+---------
+- A ResultSet is an interface in JDBC that represents the data returned by a SQL query.
+- It allows you to navigate through the data row by row and retrieve column values using 
+  a set of predefined methods.
+- Essentially, it acts as a cursor to traverse and access the query results in a structured 
+  and sequential manner.
+  
+Methods of ResultSet
+~~~~~~~~~~~~~~~~~~~~
+	1> boolean next(): Moves the cursor to the next row and returns true if there is a row, 
+       false otherwise.
+
+	2> boolean previous(): Moves the cursor to the previous row and returns true if there 
+       is a row, false otherwise.
+
+	3> boolean first(): Moves the cursor to the first row of the ResultSet and returns true 
+       if there is a row, false otherwise.
+
+	4> boolean last(): Moves the cursor to the last row of the ResultSet and returns true 
+       if there is a row, false otherwise.
+
+	5> boolean absolute(int row): Moves the cursor to the specified row number and returns 
+       true if the cursor is on a valid row, false otherwise.
+
+	6> String getString(int columnIndex) / String getString(String columnLabel): Retrieves 
+       the value of the specified column as a String.
+
+	7> int getInt(int columnIndex) / int getInt(String columnLabel): Retrieves the value of 
+       the specified column as an int.
+
+	8> double getDouble(int columnIndex) / double getDouble(String columnLabel): Retrieves 
+       the value of the specified column as a double.
+
+	9> boolean getBoolean(int columnIndex) / boolean getBoolean(String columnLabel): Retrieves 
+       the value of the specified column as a boolean.
+
+	10> Date getDate(int columnIndex) / Date getDate(String columnLabel): Retrieves the value 
+        of the specified column as a java.sql.Date.
+
+	11> Object getObject(int columnIndex) / Object getObject(String columnLabel): Retrieves the 
+        value of the specified column as an Object.
+
+	12> ResultSetMetaData getMetaData(): Returns the ResultSetMetaData object that provides 
+        metadata about the columns.
+
+	13> void close(): Closes the ResultSet and releases all associated resources.
+
+
+	
+==================================================================================================
+Summary
+~~~~~~~
+- A ResultSet in JDBC (Java Database Connectivity) is an object that holds the data retrieved from 
+  a database query. 
+- It acts as a pointer to a table of data that represents the result of a SQL query. 
+- The ResultSet object provides methods to navigate through the data, retrieve values, and handle 
+  complex data types returned by the query.
