@@ -1,0 +1,8 @@
+DatabaseMetaData
+----------------
+- Database metadata in JDBC is a set of information about the database itself, provided through 
+  a DatabaseMetaData object. 
+- This metadata includes details about the database’s structure, capabilities, and features, such 
+  as information about tables, columns, data types, and database-specific functionalities. 
+- It helps developers create flexible and adaptable code by providing insights into the database’s 
+  structure and features, enabling support for multiple database types without specific adjustments.
