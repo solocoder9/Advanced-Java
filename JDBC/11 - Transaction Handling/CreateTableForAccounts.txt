@@ -1,0 +1,32 @@
+Create table for Accounts
+-------------------------
+mysql> CREATE TABLE accounts(
+    -> account_number VARCHAR(20) PRIMARY KEY,
+    -> balance DECIMAL(10.2) NOT NULL
+    -> );
+
+
+mysql> describe accounts;
++----------------+---------------+------+-----+---------+-------+
+| Field          | Type          | Null | Key | Default | Extra |
++----------------+---------------+------+-----+---------+-------+
+| account_number | varchar(20)   | NO   | PRI | NULL    |       |
+| balance        | decimal(10,0) | NO   |     | NULL    |       |
++----------------+---------------+------+-----+---------+-------+
+
+
+mysql> INSERT INTO accounts(account_number, balance) VALUES
+    -> ('account123', 1000.00),
+    -> ('account456', 500.00),
+    -> ('account789', 750.00);
+Query OK, 3 rows affected (0.03 sec)
+
+
+mysql> select * from accounts;
++----------------+---------+
+| account_number | balance |
++----------------+---------+
+| account123     |    1000 |
+| account456     |     500 |
+| account789     |     750 |
++----------------+---------+
