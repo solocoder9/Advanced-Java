@@ -1,0 +1,38 @@
+Batch Processing in JDBC
+------------------------
+- Batch processing in JDBC is a feature that allows the execution of multiple SQL statements 
+  as a single batch. 
+- This is particularly useful for executing a large number of similar queries, such as bulk 
+  inserts, updates, or deletes, in an efficient manner. 
+- Batch processing minimizes the number of database round-trips, thereby improving the 
+  performance of the application.
+
+Key Concepts
+------------
+1> Batching:
+~~~~~~~~~~~
+- The process of grouping multiple SQL statements into a batch and sending them to the database 
+  in one go.
+- This reduces the number of database calls, which is beneficial for performance, especially when 
+  dealing with a large number of operations.
+
+2> Add to Batch:
+~~~~~~~~~~~~~~~~
+- SQL statements are added to the batch using the addBatch() method of either Statement, 
+  PreparedStatement, or CallableStatement.
+
+3> Execute Batch:
+~~~~~~~~~~~~~~~~
+- The batch of statements is executed with a single call to the executeBatch() method.
+- The method returns an array of update counts, where each count corresponds to the number of rows 
+  affected by each SQL statement in the batch.
+
+4> Batch Size:
+~~~~~~~~~~~~~~
+- Some JDBC drivers or databases have limitations on the maximum batch size. It’s important to check 
+  and adhere to these limitations to avoid errors.
+
+5> Error Handling:
+~~~~~~~~~~~~~~~~~~
+- If an error occurs during batch processing, it might result in a partial execution of the batch. 
+- Proper error handling and transaction management are necessary to ensure data integrity.
