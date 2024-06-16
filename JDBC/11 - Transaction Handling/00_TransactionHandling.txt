@@ -1,0 +1,51 @@
+Transaction Handling in JDBC
+----------------------------
+Transaction Control
+-------------------
+Transaction
+~~~~~~~~~~~
+- A transaction is a set of one or more SQL statements that are executed as a single unit of work.
+- Transactions follow the ACID properties:
+
+	Atomicity: Ensures that all operations within the transaction are completed successfully; if 
+			   not, the transaction is rolled back.
+	
+	Consistency: Guarantees that the database transitions from one valid state to another.
+	
+	Isolation: Ensures that the operations in a transaction are not affected by other concurrent 
+			   transactions.
+               
+	Durability: Once a transaction is committed, its changes are permanent and persist even in case
+	            of a system failure.
+	            
+	            
+Auto-Commit Mode
+~~~~~~~~~~~~~~~~
+- By default, JDBC operates in auto-commit mode, meaning each SQL statement is committed immediately 
+  after execution.
+- Auto-commit can be turned off to group multiple SQL statements into a single transaction.
+- Example:-
+	con.commit();
+
+
+Manual-Commit(Disabling Auto-Commit)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Use Connection.setAutoCommit(false) to disable auto-commit mode.
+- In this mode, SQL statements are executed but not committed until explicitly called.
+- Example:-
+	con.setAutoCommit(false)
+	
+	
+Commit in JDBC
+--------------
+- Commit in JDBC is an operation that permanently saves all the changes made during a transaction
+  to the database.
+- A transaction is a sequence of one or more SQL operations performed s a single unit of work.
+- Committing ensures that these operations are made permanent and visible to other transactions.
+
+
+Rollback in JDBC
+----------------
+- Rollback in JDBC is an operation that undoes all changes made during the current transaction and 
+  restores the database to its previous state. 
+- It is used to revert the database to a consistent state if an error occurs during a transaction.
