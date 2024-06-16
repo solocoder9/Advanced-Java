@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class InsertCLOB {
+public class InsertDocument {
     public static void main(String[] args) {
         String url = "jdbc:mysql://localhost:3306/mydatabase";
         String username = "root";
