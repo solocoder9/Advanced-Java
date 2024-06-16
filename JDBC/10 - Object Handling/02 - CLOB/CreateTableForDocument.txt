@@ -1,0 +1,7 @@
+Create Table for documents
+--------------------------
+    CREATE TABLE documents (
+        id INT PRIMARY KEY,
+        title VARCHAR(100),
+        content CLOB
+    );
