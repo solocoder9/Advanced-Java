@@ -1,0 +1,63 @@
+What is a Servlet?
+------------------
+- A serlet is a server-side Java program that processes client requests and generates dynamic
+  responses, mainly using the HTTP protocol.
+- It runs within a web server or application server's servlet container, which manages the 
+  lifecycle of servlets, including their creation, initialization, handling of requests,
+  and destruction.
+- In simple words, A servlet is a Java class that handles HTTP requests and generates responses,
+  typically used to create dynamic web content.
+
+Servlet lifecycle
+~~~~~~~~~~~~~~~~~
+    ● Loading and Instantiation:
+    - The servlet container loads the servlet class and creates an instance of it.
+
+    ● Initialization (init method): 
+    - The servlet is initialized by calling its init method. This method is called once and is used 
+      to perform any setup required for the servlet.
+
+    ● Request Handling (service method): 
+    - The service method is called to handle each request to the servlet. 
+    - The method determines the type of request (GET, POST, etc.) and dispatches it to the 
+      appropriate method (doGet, doPost, etc.).
+
+    ● Destruction (destroy method): 
+    - The servlet is taken out of service by calling its destroy method. This method is called once 
+      and is used to perform any cleanup required for the servlet.
+
+Servlet API
+~~~~~~~~~~~
+    ● javax.servlet Package: Contains the core classes and interfaces for creating servlets.
+
+    ● javax.servlet.http Package: Contains classes and interfaces specific to HTTP servlets.
+
+Key Interfaces and classes
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ● Servlet Interface: Defines methods that all servlets must implement (init, service, destroy, 
+                         getServletConfig, and getServletInfo).
+
+    ● HttpServlet Class: An abstract class that simplifies writing HTTP servlets by providing methods 
+                         like doGet, doPost, doPut, doDelete, etc.
+
+Advantages of Servlets
+~~~~~~~~~~~~~~~~~~~~~~
+    ● Platform Independence: Written in Java, servlets can run on any platform that supports the Java 
+                             Runtime Environment (JRE).
+
+    ● Performance: Servlets are faster than CGI (Common Gateway Interface) scripts as they are 
+                   executed within the server's process.
+
+    ● Scalability: Servlets can handle complex processing tasks and manage large numbers of 
+                   concurrent requests.
+
+    ● Integration: Easy integration with other Java technologies, such as JDBC, JSP, and EJB.
+
+Common Uses of Servlet
+~~~~~~~~~~~~~~~~~~~~~~
+    ● Processing Form Data: Handling form submissions from web pages.
+
+    ● Dynamic Content Generation: Creating dynamic web content based on user inputs or data from a 
+                                  database.
+
+    ● Session Management: Maintaining user session information across multiple requests.
