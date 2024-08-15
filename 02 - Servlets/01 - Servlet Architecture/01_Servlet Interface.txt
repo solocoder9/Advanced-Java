@@ -1,0 +1,97 @@
+Servlet Interface
+-----------------
+- The Servlet interface is the core interface in the Java Servlet API, which defines the lifecycle
+  methods that every servlet must implement.
+- The servlet interface is part of the 'javax.servlet' package and is implemented by every Java servlet.
+- It provides a contract that all servlets must follow to handle client requests and generate responses.
+
+Methods
+~~~~~~~
+- There are five key methods in Servlet interface.
+		1> init(ServletConfig config)
+		2> Service(ServletRequest request, ServletResponse response)
+		3> destroy()
+		4> getServletConfig()
+		5> getServletInfo()
+		
+1> init(ServletConfig config)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		● Purpose: 
+		- This method is called by the servlet container to initialize the servlet.
+        - It is invoked once when the servlet is first loaded into memory.
+         
+		● Parameters: 
+		- It takes a 'servletConfig' object that contains initialization parameters and a reference to 
+		  the servlet's context.
+		  
+		● Usage:
+		- Typically used to set up resources like database connections or configuration settings needed 
+		  by the servlet.
+		  
+		● Example:
+		  public void init(ServletConfig config) throws ServletException {
+    	      // Initialization code
+		  }
+		  
+2> service(ServletRequest request, ServletResponse response)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		● Purpose:
+		- This method handles all client request. 
+		- It is called every time the servlet is accessed, allowing it to process requests and generate
+		  responses.
+		  
+		● Parameters: 
+		- It takes 'ServletRequest' and 'ServletResponse' objects to process the request and generate 
+		  the responses.
+		  
+		● Usage:
+		- In 'HttpServlet', this method is overridden to handle HTTP-specific method like 'doGet()' and
+		  'doPost()'.
+		  
+		● Example:
+		  public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
+    	      // Request processing code
+		  }
+		  
+3> destroy()
+~~~~~~~~~~~~
+		● Purpose:
+		- This method is called when the servlet is begin taken out of service or destroyed.
+		- It is typically used for cleanup activities like closing database connections.
+		
+		● Usage:
+		- This is the last method called before the servlet is removed from memory.
+		
+		● Example:
+		  public void destroy() {
+    	      // Cleanup code
+		  }
+		  
+4> getServletConfig()
+~~~~~~~~~~~~~~~~~~~~~~
+		● Purpose:
+		- This method returns a 'ServletConfig' object, which contains the servlet's configuration information.
+		- It can be used to retrieve initialization parameters or the servlet context.
+		
+		● Usage:
+		- Useful for accessing the servlet's configuration and context during its execution.
+		
+		● Example:
+		  public ServletConfig getServletConfig() {
+    	      return this.config;
+		  }
+		  
+5> getServletInfo()
+~~~~~~~~~~~~~~~~~~~
+		● Purpose:
+		- This method provides metadata about the servlet, such as version, author, and description.
+		
+		● Usage:
+		 Primarily used for logging or informational purposes.
+		 
+		● Example:
+		  public String getServletInfo() {
+    	      return "MyServlet v1.0";
+		  }
+		  
+		  
