@@ -1,0 +1,59 @@
+Servlet Lifecycle
+-----------------
+- The Servlet Lifecycle defines the sequence of events that occur from the time a servlet is created
+  until it is destroyed by the server.
+- Understand this is crucial for developing robust Java web application.
+
+Serlet Lifecycle Stages
+~~~~~~~~~~~~~~~~~~~~~~~
+1> Loading and Instantiation:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	● When it Happens: 
+	- The servlet is loaded into memory when it is first requested by a client or when the server starts, 
+  	  depending on its configuration (e.g., load-on-startup in 'web.xml').
+
+	● Details:
+	- The servlet container (Like Tomcat) creates an instance of the servlet class.
+
+2> Initialization ('init()' Method)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	● When it Happens:
+	- After the servlet instance is created, the container calls the 'init()' method.
+	
+	● Purpose: 
+	- The 'init()' method is used to perfom any servlet-specific initialization, such as setting up database
+	  connections or reading configuration settings.
+	● Details:
+	- The 'init()' method is called only once during the lifecycle of the servlet.
+	
+3> Request Handling ('service()' Method)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	● When it Happens: 
+	- Once the servlet is initialized, the 'service()' method is called every time a client request is made 
+	  to the servlet.
+	  
+	● Purpose:
+	- The 'service()' method determines the type of request (e.g., GET, POST) and dispatches it to the 
+	  appropriate handler method ('doGet()', 'doPost()', etc.).
+	
+	● Details:
+	- The 'service()' method is called for each request, allowing the servlet to handle multiple requests 
+	  concurrently.
+	- For 'HttpServlet', the 'service()' method automatically routes requests to method slike'doGet()' and
+	  'doPost()' based on the HTTP request type.
+	  
+4. Termination ('destroy()' Method)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	● When it Happens:
+	- The 'destroy()' method is called when the servlet is being taken out of service, usually when the 
+	  server is shutting down or the servlet is begin reloaded.
+	  
+	● Purpose:
+	- The 'destroy()' method is used to release resources such as database connections, file handles, or
+	  threads.
+	  
+	● Details:
+	- The 'destroy()' method is called only once, just before the servlet is garbage collected.
+	- After 'destroy()' is called, the servlet is no longer available to handle request.
+	
+	 
