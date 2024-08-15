@@ -1,0 +1,23 @@
+Web
+-------------------
+- The web (short for the World Wide Web) is a system of interlinked hypertext documents and multimedia 
+  content that can be accessed over the internet using a web browser. 
+- It allows users to navigate and interact with content through hyperlinks, enabling a global exchange 
+  of information.
+  
+
+Web Application
+---------------
+- A web application is a software program that runs on a web server and is accessed through a web browser
+  over a network, such as the internet.
+- It typically includes both frontend(user interface) and backend(Server-side logic) components.
+- Examples:- Gmail, Flipkart, Amazon, Facebook, etc.
+
+
+HTTP
+----
+- HTTP(Hypertext Transfer Protocol) is a protocol used to transmitting data over the web. 
+- It defines how messages are formatted and exchanged between a client(like a web browser) and server.
+- HTTP is the foundation of data communication on the internet and is used to load web pages, send forms, 
+  and perform other web-based actions.
+- it supports different methods like GET, POST, PUT, and DELETE for various operations.
