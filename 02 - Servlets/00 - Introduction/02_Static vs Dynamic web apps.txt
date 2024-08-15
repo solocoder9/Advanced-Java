@@ -1,0 +1,13 @@
+         Static Web Pages                |        Dynamic Web Pages
+-----------------------------------------|----------------------------------------
+- Fixed content, does not change.        |- Content can change dynamically.
+- Displays the same information to every |- Displays different content based on
+  user.                                  |  user interactions or data.
+- Does not interact with databases or    |- Interacts with databases to fetch and
+  server-side logic.                     |  display personalized data.
+- Faster to load and simpler to host.    |- More complex and requires server-side
+                                         |  processing.
+- Written using HTML, CSS                |- Uses server-side languages like Java
+                                         |   (Servlets), PHP, etc.
+- Typically used for simple informational|- Typically used for complex, interactive
+  sites.                                 |  sites or web apps.
