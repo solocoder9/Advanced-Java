@@ -1,0 +1,11 @@
+How a Servlet application works
+-------------------------------
+- When a user enters a URL in the browser, the web container (e.g., Tomcat) creates two objects: request and response. 
+  The container then calls the service() method of the servlet, passing these request and response objects. The 
+  service() method determines the type of HTTP request (like GET or POST) and forwards the request to the appropriate 
+  method (e.g., doGet(), doPost()). Based on the logic in those methods, the servlet processes the request and 
+  generates a response, which is sent back to the client and displayed in the web browser window.
+
+- After the response is sent, the request and response objects are no longer needed. The servlet container marks these 
+  objects for garbage collection. The Java Garbage Collector eventually reclaims the memory occupied by these objects 
+  when it runs, freeing up resources.
