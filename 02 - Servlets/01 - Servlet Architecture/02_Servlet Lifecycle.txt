@@ -39,7 +39,7 @@ Serlet Lifecycle Stages
 	● Details:
 	- The 'service()' method is called for each request, allowing the servlet to handle multiple requests 
 	  concurrently.
-	- For 'HttpServlet', the 'service()' method automatically routes requests to method slike'doGet()' and
+	- For 'HttpServlet', the 'service()' method automatically routes requests to methods like 'doGet()' and
 	  'doPost()' based on the HTTP request type.
 	  
 4. Termination ('destroy()' Method)
