@@ -1,0 +1,36 @@
+ServletContext
+--------------
+- ServletContext is a global object created by the servlet container, shared by all the servlet 
+  within the web application.
+- It contains information about the web application and provides methods for communication 
+  between the servlets in the application.
+- It is used to share data between different servlets in the same application and allow the 
+  servlet to access server-wide information.
+  
+Methods of ServletContext
+~~~~~~~~~~~~~~~~~~~~~~~~~
+	1> getInitParameter(String name): Returns initialization parameters from web.xml that are shared 
+	                                  across the whole web application.
+	                                  
+    2> getInitParameterNames(): Returns an enumeration of all shared initialization parameter names.
+    
+	3> getAttributes (String name): Returns an attribute that has been set in the context.
+	
+	4> setAttributes(String name, Object object): Sets an attribute in the context that can be shared 
+	                                              among servlets.
+	                                              
+	5> getContextPath(): Returns the path of the web application.
+	
+	6> getRealPath(String path): Returns the real path of the web application on the server.
+	
+	
+Example:-
+~~~~~~~~
+	public class MyServlet extends HttpServlet {
+    	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        	ServletContext context = getServletContext();
+        	String appPath = context.getRealPath("/index.html");
+        	System.out.println("App Path: " + appPath);
+    	}
+	}
+	
