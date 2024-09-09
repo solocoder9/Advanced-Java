@@ -1,0 +1,94 @@
+Annotations for Servlet Configuration
+-------------------------------------
+- In modern Java web application, annotations are used to configure servlets without the need for XML
+  configuration in the web.xml file.
+- Servlet annotations simplify the process of defining servlets, filters, and listeners, making the 
+  code more readable and easier to maintain.
+  
+Common Annotations for Servlet Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	1> @WebServlet: Used to declare a servlet.
+	2> @WebFilter: Used to declare a filter that intercepts requests to servlets or JSPs.
+	3> @WebListener: Used to declare a listener that monitors events in the servlet lifecycle.
+	
+1> @WebServlet
+~~~~~~~~~~~~~~
+- This annotation is used to define a servlet and its URL mapping.
+- Syntax:-
+	@WebServlet(name = "MyServlet", urlPatterns = {"/path"})
+	public class MyServlet extends HttpServlet {
+    	// Servlet code here
+	}
+	
+	Attributes:
+	● name: The name of the servlet
+	● urlPatterns: Defines the URL pattern(s) to which the servlet responds.
+	● initParam: Used to pass initialization parameters to the servlet.
+	
+- Example:-
+	@WebServlet(name = "HelloServlet", urlPatterns = {"/hello"})
+	public class HelloServlet extends HttpServlet {
+    	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        	response.getWriter().println("Hello, World!");
+    	}
+	}
+	
+	
+2> @WebFilter
+~~~~~~~~~~~~~
+- This annotation is used to define a filter that intercepts and processes request before they reach
+  a servlet or JSP.
+- Syntax:- 
+	@WebFilter(filterName = "MyFilter", urlPatterns = {"/path"})
+	public class MyFilter implements Filter {
+    	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        	// Filter code here
+        	chain.doFilter(request, response); // Pass control to the next filter or servlet
+    	}
+	}
+	
+	Attributes:
+	● filterName: The name of the filter.
+	● urlPatterns: Specifies the URL patters the filter should intercept.
+	● initParam: Used to pass initialization parameters to the filter.
+	
+- Example:-
+	@WebFilter(filterName = "LoggingFilter", urlPatterns = {"/hello"})
+	public class LoggingFilter implements Filter {
+    	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        	System.out.println("Request received at " + new Date());
+        	chain.doFilter(request, response);
+    	}
+	}
+	
+	
+3> WebListener
+~~~~~~~~~~~~~~
+- This annotation is used to define a listener that monitors servlet lifecycle event like session
+  creation, destruction, and request initialization.
+- Syntax:-
+	@WebListener
+	public class MyListener implements ServletContextListener {
+    	public void contextInitialized(ServletContextEvent sce) {
+        	// Code to run when the application starts
+    	}
+    	public void contextDestroyed(ServletContextEvent sce) {
+        	// Code to run when the application shuts down
+    	}
+	}
+	
+- Example:-
+	@WebListener
+	public class AppStartupListener implements ServletContextListener {
+    	public void contextInitialized(ServletContextEvent sce) {
+        	System.out.println("Application started!");
+    	}
+    	public void contextDestroyed(ServletContextEvent sce) {
+        	System.out.println("Application stopped!");
+    	}
+	}
+	
+	
+	
+	
+	
