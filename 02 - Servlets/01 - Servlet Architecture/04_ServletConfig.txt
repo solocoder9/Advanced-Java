@@ -1,0 +1,29 @@
+ServletConfig
+-------------
+- ServletConfig is an object created by the servlet container for each servlet.
+- It contains configurations information provided in the web.xml file(deployment descripter) and is
+  used to pass initialization parameters to the servlet.
+- It is specific to each servlet and provides information to that particular servlet at rurntime.
+
+Methods of ServletConfig
+~~~~~~~~~~~~~~~~~~~~~~~~
+	1> getServletName(): Returns the name of the servlet as defined in web.xml.
+	
+	2> getInitParameter(String name): Returns a specific initialization parameter defined for that 
+									  servlet.
+									  
+	3> getInitParameterNames(): Returns an enumeration of all initialization parameter names.
+	
+	4> getServletContext(): Returns the 'servletContext' object , which allows the servlet to interact
+	                        with its environment.
+	                        
+	                        
+Example:-
+~~~~~~~~~
+	public class MyServlet extends HttpServlet {
+    	public void init(ServletConfig config) throws ServletException {
+        	String param = config.getInitParameter("paramName");
+        	System.out.println("Init Parameter: " + param);
+    	}
+	}
+	
