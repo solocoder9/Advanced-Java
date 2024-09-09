@@ -1,0 +1,103 @@
+Deployment Descriptor
+---------------------
+- A deployment descriptor is a XML file used in Java EE(Enterprise Edition) applications to configure
+  various aspects of the appllication's deployment and runtime behavior.
+- The primary deployment descriptor in a Java EE web application is web.xml, which is located in the 
+  WEB-INF directory of the application.
+- The deployment descriptor provides metadata that informs the applications server (like Apache Tomcat)
+  how to deploy and manage the web application. 
+- It specifies configuration details such as servlet mappings, context parameters, security settings, 
+  and more.
+  
+Key Elements of a Deployment Descriptor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1> Servlet Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~
+	● <servlet>: 
+	~~~~~~~~~~~~
+	  - Defines a servlet by specifying its name and class.
+	  - This element is used to register a servlet with the server.
+	  - Example:-
+	  		<servlet>
+    			<servlet-name>exampleServlet</servlet-name>
+    			<servlet-class>com.example.ExampleServlet</servlet-class>
+			</servlet> 			
+	  			
+	● <servlet-mapping>: 
+	 ~~~~~~~~~~~~~~~~~~~~
+	   - Maps a URL pattern to a servlet.
+	   - This tells the server which servlet should handle request for a given URL pattern.
+	   - Example:-
+	   		<servlet-mapping>
+    			<servlet-name>exampleServlet</servlet-name>
+    			<url-pattern>/example</url-pattern>
+			</servlet-mapping>
+			
+			
+2> Context Parameters
+~~~~~~~~~~~~~~~~~~~~~
+	● <context-param>:
+	~~~~~~~~~~~~~~~~~~
+	  - Defines parameters that an be accessed by any servlet or JSP in the web application.
+	  - Useful for configuring application-wide settings.
+	  - Example:-
+	  		<context-param>
+    			<param-name>configFile</param-name>
+    			<param-value>/WEB-INF/config.xml</param-value>
+			</context-param>
+		
+			
+3> Session Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~
+	● <session-config>:
+	~~~~~~~~~~~~~~~~~~
+	  - Provides session management configuration, such as session timeout settings.
+	  - Example:-
+	  		<session-config>
+    			<session-timeout>30</session-timeout> <!-- in minutes -->
+			</session-config>
+	  			
+	
+4> Security Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~
+	● <security-constrains>: 
+	~~~~~~~~~~~~~~~~~~~~~~~~
+	  - Defines security constrains for web resources. 
+	  - It specifies which roles are allowed to access certain parts of the application.
+	  - Example:-
+	  		<security-constraint>
+    			<web-resource-collection>
+        			<web-resource-name>Protected Area</web-resource-name>
+        			<url-pattern>/secure/*</url-pattern>
+    			</web-resource-collection>
+    			<auth-constraint>
+        			<role-name>admin</role-name>
+    			</auth-constraint>
+			</security-constraint>
+			
+			
+5> Error Handling
+~~~~~~~~~~~~~~~~~
+	● <welcome-file-lis>: 
+	~~~~~~~~~~~~~~~~~~~~~
+	  - Configures custom error pages for specific HTTP error codes or Java exception.
+	  - Example:-
+	  		<error-page>
+    			<error-code>404</error-code>
+    			<location>/WEB-INF/jsp/404.jsp</location>
+			</error-page>
+	  		
+	  		
+6> Welcome Files
+~~~~~~~~~~~~~~~~
+	● <welome-file-list>
+	~~~~~~~~~~~~~~~~~~~~
+	  - Specifies default files to be served when accessing the root of the application.
+	  - Example:-
+	  		<welcome-file-list>
+    			<welcome-file>index.html</welcome-file>
+    			<welcome-file>index.jsp</welcome-file>
+			</welcome-file-list>
+	  		
+	  		
+	   		
