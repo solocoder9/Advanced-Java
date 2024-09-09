@@ -1,0 +1,11 @@
+Annotations
+-----------
+- In Java, annotations are metadata that can be attached to various elements of a program, such as
+  classes, methods, and fields, to provide information to the compiler or to influence the behavior 
+  of the code at runtime.
+- Annotations enables cleaner, more modular code by reducing the need for boiler plate and 
+  configurations files.
+- There are two types of annotations in java:
+		1> Built-in Annotations(Ex:- @Override, @Deprecated...)
+		2> Meta-Annotations(Ex:- @Retention, @Target, @Inherited...)
+		
