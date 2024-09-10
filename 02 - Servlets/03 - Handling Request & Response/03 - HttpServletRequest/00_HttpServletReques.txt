@@ -1,0 +1,59 @@
+HttpServletRequest
+------------------
+- HttpServletRequest is an interface in the Java Servlet API that provides methods for handling HTTP
+  request.
+- It allows servlets to access information about the request made by a client, including request 
+  parameter, headers, attributes, and more.
+- The purpose of HttpServletReques is to encapsulate the data send by a client (usually a web browser)
+  to a server. It provides a way for servlets to retrieve and process this data to generate an 
+  appropriate response
+  
+Key Features or Methods of HttpServletRequest
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1> Request Parameters:
+~~~~~~~~~~~~~~~~~~~~~~
+	● Method: getParameter(String name)
+	● Description: Retrieves the value of a request parameter (e.g., form fields).
+	● Example: String name = req.getParameter("name");
+	
+2> Request Headers:
+~~~~~~~~~~~~~~~~
+	● Method: getHeader(String name)
+	● Description: Retrieves the value of a specified header from the request.
+	● Example: String userAgent = req.getHeader("User-Agent");
+
+3> Request Attributes:
+~~~~~~~~~~~~~~~~~~~~~
+	● Method: getAttribute(String name)
+	● Description: Retrieves an attribute set by other components or by the servlet.
+	● Example: Object attr = req.getAttribute("attributeName");
+	
+4> Request Method:
+~~~~~~~~~~~~~~~~~~
+	● Method: getMethod()
+	● Description: Returns the HTTP method (GET, POST, etc.) used in the request.
+	● Example: String method = req.getMethod();
+	
+5> Request URI and URL:
+~~~~~~~~~~~~~~~~~~~~~~~
+	● Method: getRequestURI(), getRequestURL()
+	● Description: Retrieves the URI or full URL of the request.
+	● Example: String uri = req.getRequestURI();
+
+6> Query String:
+~~~~~~~~~~~~~~~~
+	● Method: getQueryString()
+	● Description: Retrieves the query string part of the URL.
+	● Example: String queryString = req.getQueryString();
+
+7> Client Information:
+~~~~~~~~~~~~~~~~~~~~~~
+	● Method: getRemoteAddr()
+	● Description: Retrieves the IP address of the client making the request.
+	● Example: String clientIP = req.getRemoteAddr();
+
+8> Session Management:
+~~~~~~~~~~~~~~~~~~~~~~
+	● Method: getSession()
+	● Description: Retrieves the HttpSession associated with the request, or creates a new session if none exists.
+	● Example: HttpSession session = req.getSession();
