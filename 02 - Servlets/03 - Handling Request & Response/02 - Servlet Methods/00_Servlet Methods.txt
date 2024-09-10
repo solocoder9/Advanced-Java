@@ -1,0 +1,24 @@
++------------+------------------+--------------------------------------------------+--------------------------------+
+| HTTP Method| Servlet Method   | Purpose                                          | Typical Usage                  |
++------------+------------------+--------------------------------------------------+--------------------------------+
+| GET        | doGet()          | Handles requests to retrieve data                | - Fetching webpage content     |
+|            |                  |                                                  | - Retrieving data from server  |
++------------+------------------+--------------------------------------------------+--------------------------------+
+| POST       | doPost()         | Handles requests to submit data for processing   | - Submitting form data         |
+|            |                  |                                                  | - Creating new records         |
++------------+------------------+--------------------------------------------------+--------------------------------+
+| PUT        | doPut()          | Handles requests to update or create a resource  | - Updating existing data       |
+|            |                  |                                                  | - Creating or replacing data   |
++------------+------------------+--------------------------------------------------+--------------------------------+
+| DELETE     | doDelete()       | Handles requests to delete a resource            | - Removing resources           |
+|            |                  |                                                  | - Deleting records             |
++------------+------------------+--------------------------------------------------+--------------------------------+
+| HEAD       | doHead()         | Handles requests to retrieve headers only        | - Checking resource metadata   |
+|            |                  |                                                  | - Verifying resource existence |
++------------+------------------+--------------------------------------------------+--------------------------------+
+| OPTIONS    | doOptions()      | Handles requests to describe communication options| - Discovering allowed methods | 
+|            |                  |                                                  | - Checking supported operations|
++------------+------------------+--------------------------------------------------+--------------------------------+
+| PATCH      | doPatch()        | Handles requests to apply partial modifications  | - Partially updating data      |
+|            |                  |                                                  | - Modifying specific parts     |
++------------+------------------+--------------------------------------------------+--------------------------------+
