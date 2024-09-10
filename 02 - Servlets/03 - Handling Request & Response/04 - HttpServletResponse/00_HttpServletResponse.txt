@@ -1,0 +1,54 @@
+HttpServletResponse
+-------------------
+- HttpServletResponse is an interface in the Java Servlet API that provides methods for constructing 
+  and sending an HTTP response from a servlet back to the client.
+- It allows servlets to set response headers, write content to the response body, and manage the 
+  response status.
+- The primary purpose of HttpServletResponse is to encapsulate the data that a servlet sends back to
+  the client. It provides a way for servlets to set response parameters, headers, and body content, 
+  and to control the response status code.
+  
+Key Features or Methods
+~~~~~~~~~~~~~~~~~~~~~~~
+1> Response Parameters:
+~~~~~~~~~~~~~~~~~~~~~~~
+	● Method: setContentType(String type)
+	- Description: Sets the MIME type of the response content (e.g., text/html, application/json).
+	- Example: res.setContentType("text/html");
+	
+	● Method: setCharacterEncoding(String charset)
+	- Description: Sets the character encoding for the response.
+	- Example: res.setCharacterEncoding("UTF-8");
+	
+	
+2> Response Headers:
+~~~~~~~~~~~~~~~~~~~~
+	● Method: setHeader(String name, String value)
+	- Description: Sets a response header with a specified name and value.
+	- Example: res.setHeader("Cache-Control", "no-cache");
+
+	● Method: addHeader(String name, String value)
+	- Description: Adds a value to an existing response header.
+	- Example: res.addHeader("Set-Cookie", "sessionID=12345");
+
+
+3> Response Status:
+~~~~~~~~~~~~~~~~~~~
+	● Method: setStatus(int sc)
+	- Description: Sets the HTTP status code for the response (e.g., HttpServletResponse.SC_OK).
+	- Example: res.setStatus(HttpServletResponse.SC_OK);
+
+	● Method: sendError(int sc, String msg)
+	- Description: Sends an error response with a specified status code and message.
+	- Example: res.sendError(HttpServletResponse.SC_NOT_FOUND, "Resource not found");
+
+	● Method: sendRedirect(String location)
+	- Description: Sends a redirect response to the client with a specified location URL.
+	- Example: res.sendRedirect("http://example.com");
+
+
+4> Response Body:
+~~~~~~~~~~~~~~~~~
+	● Method: getWriter()
+	- Description: Returns a PrintWriter object to send character text to the client.
+	- Example: PrintWriter out = res.getWriter();
