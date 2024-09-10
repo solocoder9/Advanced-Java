@@ -1,0 +1,29 @@
++---------+-------------------------+---------------------------------------------------+-------------------------------+
+| Method  | Purpose                 | Characteristics                                   | Usage Example                 |
++---------+-------------------------+---------------------------------------------------+-------------------------------+
+| GET     | Retrieve data           | - Requests data from a specified resource         | - Requesting a webpage        |
+|         |                         | - Data in URL (query string)                      | - Fetching data from API      |
+|         |                         | - Idempotent (same result)                        |                               |
++---------+-------------------------+---------------------------------------------------+-------------------------------+
+| POST    | Submit data             | - Sends data for processing                       | - Submitting form data        |
+|         |                         | - Data in request body                            | - Creating a new record       |
+|         |                         | - Not idempotent (varies with requests)           |                               |
++---------+-------------------------+---------------------------------------------------+-------------------------------+
+| PUT     | Update or create        | - Replaces resource with provided data            | - Updating user profile       |
+|         |                         | - Data in request body                            | - Creating new resource       |
+|         |                         | - Idempotent (same result)                        |                               |
++---------+-------------------------+---------------------------------------------------+-------------------------------+
+| DELETE  | Remove a resource       | - Deletes resource at specified URL               | - Deleting a user account     |
+|         |                         | - Idempotent (resource removed)                   |                               |
++---------+-------------------------+---------------------------------------------------+-------------------------------+
+| HEAD    | Retrieve headers only   | - Similar to GET, but no body                     | - Checking resource status    |
+|         |                         | - Used to check metadata or status                | - Checking if resource exists |
+|         |                         | - Idempotent (same result)                        |                               |
++---------+-------------------------+---------------------------------------------------+-------------------------------+
+| OPTIONS | Describe communication  | - Returns HTTP methods supported by the server    | - Determining allowed methods |
+|         | options for a resource  | - Used to find out what methods are supported     |                               |
++---------+-------------------------+---------------------------------------------------+-------------------------------+
+| PATCH   | Partially update        | - Applies partial modifications to a resource     | - Partially updating user info|
+|         | a resource              | - Data in request body                            |                               |
+|         |                         | - Not idempotent (depends on the changes)         |                               |
++---------+-------------------------+---------------------------------------------------+-------------------------------+
