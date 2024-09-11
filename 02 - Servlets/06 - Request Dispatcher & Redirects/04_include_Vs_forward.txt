@@ -1,0 +1,24 @@
+Difference between include and forward
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++------------------------+--------------------------------------------------+-----------------------------------------------------+
+| Feature                | include                                          | forward                                             |
++------------------------+--------------------------------------------------+-----------------------------------------------------+
+| Request Handling       | Includes content of another resource in the      | Forwards the request to another resource without    |
+|                        | current response                                 | returning control to the original resource          |
++------------------------+--------------------------------------------------+-----------------------------------------------------+
+| Control Flow           | Original servlet continues processing after      | Original servlet stops processing after the forward |
+|                        | the include                                      |                                                     |
++------------------------+--------------------------------------------------+-----------------------------------------------------+
+| Response Combination   | Combines the response of the included resource   | Final response is generated only by the forwarded   |
+|                        | with the original resource                       | resource                                            |
++------------------------+--------------------------------------------------+-----------------------------------------------------+
+| URL Change in Browser  | No (browser URL remains the same)                | No (browser URL remains the same)                   |
++------------------------+--------------------------------------------------+-----------------------------------------------------+
+| Number of Requests     | One request (single request handled internally)  | One request (single request handled internally)     |
++------------------------+--------------------------------------------------+-----------------------------------------------------+
+| Scope of Redirection   | Can include content from within the same web     | Can forward to resources within the same web        |
+|                        | application only                                 | application only                                    |
++------------------------+--------------------------------------------------+-----------------------------------------------------+
+| Usage Example          | RequestDispatcher rd = req.getRequestDispatcher("header.jsp"); | RequestDispatcher rd = req.getRequestDispatcher("newPage.jsp"); |
+|                        | rd.include(req, res);                            | rd.forward(req, res);                               |
++------------------------+--------------------------------------------------+-----------------------------------------------------+
