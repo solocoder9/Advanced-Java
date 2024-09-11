@@ -1,0 +1,21 @@
+Difference between sendRedirect and RequestDispatcher
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++------------------------+--------------------------------------------------+-----------------------------------------------------+
+| Feature                | sendRedirect                                     | RequestDispatcher (forward)                         |
++------------------------+--------------------------------------------------+-----------------------------------------------------+
+| Client-Side vs         | Client-side redirect (new request sent by client)| Server-side forward (request handled internally)    |
+| Server-Side            |                                                  |                                                     |
++------------------------+--------------------------------------------------+-----------------------------------------------------+
+| URL Change in Browser  | Yes (new URL shown in browser address bar)       | No (browser URL remains the same)                   |
++------------------------+--------------------------------------------------+-----------------------------------------------------+
+| Number of Requests     | Two requests (original + redirected request)     | One request (single request handled internally)     |
++------------------------+--------------------------------------------------+-----------------------------------------------------+
+| Scope of Redirection   | Can redirect to external URLs (even other domains)| Only redirects within the same web application     |
++------------------------+--------------------------------------------------+-----------------------------------------------------+
+| Performance            | Slightly slower due to new client request        | Faster as it doesn’t involve a client-side request  |
++------------------------+--------------------------------------------------+-----------------------------------------------------+
+| Data Sharing           | Cannot share request attributes                  | Can share request attributes                        |
++------------------------+--------------------------------------------------+-----------------------------------------------------+
+| Usage Example          | res.sendRedirect("newPage.jsp");                 | RequestDispatcher rd = req.getRequestDispatcher("newPage.jsp"); |
+|                        |                                                  | rd.forward(req, res);                               |
++------------------------+--------------------------------------------------+-----------------------------------------------------+
