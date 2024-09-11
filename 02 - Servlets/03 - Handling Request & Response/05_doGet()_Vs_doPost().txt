@@ -1,0 +1,29 @@
+Difference between doGet() and doPost()
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++----------------------+------------------------------------------------------+---------------------------------------------------------+
+| Aspect               | doGet()                                              | doPost()                                                |
++----------------------+------------------------------------------------------+---------------------------------------------------------+
+| HTTP Method          | Handles HTTP GET requests.                           | Handles HTTP POST requests.                             |
++----------------------+------------------------------------------------------+---------------------------------------------------------+
+| Request Type         | Used to request data from the server.                | Used to send data to the server (e.g., form submission).|
++----------------------+------------------------------------------------------+---------------------------------------------------------+
+| Parameter Visibility | Parameters are appended to the URL (visible in the   | Parameters are sent in the request body (not visible    |
+|                      | address bar).                                        | in the URL).                                            |
++----------------------+------------------------------------------------------+---------------------------------------------------------+
+| Data Size Limit      | Limited by the length of the URL (generally around   | Can send large amounts of data because it's in the      |
+|                      | 2048 characters).                                    | request body.                                           |
++----------------------+------------------------------------------------------+---------------------------------------------------------+
+| Caching              | GET requests are often cached by the browser and     | POST requests are not cached.                           |
+|                      | server.                                              |                                                         |
++----------------------+------------------------------------------------------+---------------------------------------------------------+
+| Bookmarking          | GET requests can be bookmarked because the           | POST requests cannot be bookmarked.                     |
+|                      | parameters are in the URL.                           |                                                         |
++----------------------+------------------------------------------------------+---------------------------------------------------------+
+| Usage                | Ideal for retrieving data (e.g., search queries,     | Ideal for sending sensitive or large amounts of data    |
+|                      | hyperlinks).                                         | (e.g., form data).                                      |
++----------------------+------------------------------------------------------+---------------------------------------------------------+
+| Idempotency          | Typically idempotent (multiple requests yield the    | Not necessarily idempotent (multiple requests can lead  |
+|                      | same result).                                        | to changes on the server).                              |
++----------------------+------------------------------------------------------+---------------------------------------------------------+
+| Security             | Less secure as data is visible in the URL.           | More secure as data is sent in the request body.        |
++----------------------+------------------------------------------------------+---------------------------------------------------------+
