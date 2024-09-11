@@ -1,0 +1,27 @@
+RequestDispatcher
+-----------------
+- RequestDispatcher is an interface in the Java Servlet API that allow a sevlet to forward a request
+  to another resource(like another servlet, JSP, HTML page) or to include the content of another 
+  resource in the response.
+- It is used to request delegation and resource inclusion within the same server context.
+  
+Common Methods of RequestDispatcher
+-----------------------------------
+1> Forwarding Request
+~~~~~~~~~~~~~~~~~~~~~
+	● Method: forward(ServletRequest request, ServletResponse response)
+	- Description: Forwards the request to another resource (e.g., servlet, JSP). The browser is unaware 
+      of this internal forwarding, and the URL in the address bar remains unchanged.
+    - Example:-
+    	RequestDispatcher dispatcher = req.getRequestDispatcher("/anotherServlet");
+		dispatcher.forward(req, res);
+    	
+2> Including Resources
+~~~~~~~~~~~~~~~~~~~~~~
+	● Method: include(ServletRequest request, ServletResponse response)
+	- Description: Includes the content of another resource (like a JSP or another servlet) in the 
+	  response of the current servlet. The response from both resources is combined.
+	- Example:-
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/header.jsp");
+		dispatcher.include(req, res);
+		
