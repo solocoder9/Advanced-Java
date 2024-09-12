@@ -1,0 +1,78 @@
+Session Management in Java
+--------------------------
+- Session management is a technique used to maintain the state of a user across multiple requests in 
+  a stateless HTTP protocol. It helps to keep track of a user's interaction with a web application 
+  over time.
+- The primary purpose of session management is to persist data (such as user information or preferences) 
+  across multiple requests and responses in a web application.
+
+
+Types of Session Management:
+----------------------------
+1. Cookies:
+~~~~~~~~~~~
+   - Small data stored in the client's browser.
+   - The server sends cookies to the client, which are sent back with every request.
+
+2. URL Rewriting:
+~~~~~~~~~~~~~~~~~
+   - The session ID is appended to the URL.
+   - The client browser must support URL rewriting.
+
+3. Hidden Form Fields:
+~~~~~~~~~~~~~~~~~~~~~~
+   - Session data is stored in hidden fields of an HTML form.
+   - This technique is suitable for forms but not for general navigation.
+
+4. HTTP Sessions (HttpSession API):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   - Managed by the server.
+   - Each user is associated with a unique session ID.
+   - Sessions are stored on the server and referenced by the client through a session ID.
+
+
+Key Features of HttpSession:
+----------------------------
+1. Create/Retrieve Session:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   - Method: HttpSession getSession()
+   - Example: HttpSession session = req.getSession();
+
+2. Set Attribute:
+~~~~~~~~~~~~~~~~~
+   - Method: void setAttribute(String name, Object value)
+   - Example: session.setAttribute("user", userObject);
+
+3. Get Attribute:
+~~~~~~~~~~~~~~~~~
+   - Method: Object getAttribute(String name)
+   - Example: User user = (User) session.getAttribute("user");
+
+4. Invalidate Session:
+~~~~~~~~~~~~~~~~~~~~~~
+   - Method: void invalidate()
+   - Example: session.invalidate(); (Destroys the session)
+
+5. Set Session Timeout:
+~~~~~~~~~~~~~~~~~~~~~~~
+   - Method: void setMaxInactiveInterval(int seconds)
+   - Example: session.setMaxInactiveInterval(300); (Session expires after 5 minutes)
+
+
+Example Code:
+-------------
+@WebServlet("/example")
+public class ExampleServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        HttpSession session = req.getSession(); // Retrieve session
+        session.setAttribute("name", "JohnDoe"); // Store data in session
+        String name = (String) session.getAttribute("name"); // Retrieve data from session
+        session.invalidate(); // Invalidate session
+    }
+}
+
+Summary:
+- Session management is critical for maintaining user state in web applications.
+- Common techniques include Cookies, URL Rewriting, Hidden Form Fields, and HttpSession.
+- HttpSession is the most commonly used server-side session management technique in Java.
