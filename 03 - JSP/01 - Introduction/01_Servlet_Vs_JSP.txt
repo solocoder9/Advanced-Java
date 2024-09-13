@@ -1,0 +1,38 @@
++-------------------------+-----------------------------------------------------+-----------------------------------------------------+
+| **Aspect**              | **Servlet**                                         | **JSP (JavaServer Pages)**                          |
+|-------------------------|-----------------------------------------------------|-----------------------------------------------------|
+| **Definition**          | A Java class that handles HTTP requests and         | A technology for creating dynamic web pages by      |
+|                         | generates responses.                                | embedding Java code into HTML.                      |
+|-------------------------|-----------------------------------------------------|-----------------------------------------------------|
+| **Code Structure**      | Java code is mixed with HTML in the same class.     | HTML and Java code are separated; Java code is      |
+|                         |                                                     | embedded within HTML using special tags.            |
+|-------------------------|-----------------------------------------------------|-----------------------------------------------------|
+| **Development**         | Typically involves writing Java code for handling   | More suitable for designing the view; it allows     |
+|                         | business logic and generating HTML.                 | embedding Java code directly in HTML.               |
+|-------------------------|-----------------------------------------------------|-----------------------------------------------------|
+| **File Extension**      | `.java` (compiled into `.class` files).             | `.jsp` (compiled into servlets).                    |
+|-------------------------|-----------------------------------------------------|-----------------------------------------------------|
+| **Compilation**         | Servlets are compiled from Java source code to      | JSP pages are compiled into servlets by the server  |
+|                         | bytecode once.                                      | when first requested.                               |
+|-------------------------|-----------------------------------------------------|-----------------------------------------------------|
+| **Execution**           | Java code is executed on each request.              | JSP is converted to a servlet, and the servlet is   |
+|                         |                                                     | executed for requests.                              |
+|-------------------------|-----------------------------------------------------|-----------------------------------------------------|
+| **Code Separation**     | Mixing of HTML and Java code can be cumbersome.     | Encourages separation of presentation (HTML) and    |
+|                         |                                                     | business logic (Java code).                         |
+|-------------------------|-----------------------------------------------------|-----------------------------------------------------|
+| **Maintainability**     | Harder to maintain due to embedded Java in HTML.    | Easier to maintain with a clearer separation of     |
+|                         |                                                     | concerns.                                           |
+|-------------------------|-----------------------------------------------------|-----------------------------------------------------|
+| **Dynamic Content**     | Generates dynamic content through Java code         | Generates dynamic content by embedding Java code    |
+|                         | processing and outputting HTML.                     | in HTML.                                            |
+|-------------------------|-----------------------------------------------------|-----------------------------------------------------|
+| **Performance**         | May involve repeated parsing and processing of Java | Compiled into a servlet which is reused, improving  |
+|                         | code on each request.                               | performance by avoiding repeated compilation.       |
+|-------------------------|-----------------------------------------------------|-----------------------------------------------------|
+| **Use Case**            | Ideal for handling complex business logic and       | Ideal for presentation and view-layer logic.        |
+|                         | processing logic.                                   |                                                     |
+|-------------------------|-----------------------------------------------------|-----------------------------------------------------|
+| **JSP Features**        | Does not have JSP-specific features like directives | Supports directives, scriptlets, expressions, tags, |
+|                         | or tag libraries.                                   | and tag libraries (JSTL) for simplified development.|
++-------------------------+-----------------------------------------------------+-----------------------------------------------------+
