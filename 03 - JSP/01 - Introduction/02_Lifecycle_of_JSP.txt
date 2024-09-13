@@ -1,0 +1,39 @@
+Lifecycle of a JSP Page
+-----------------------
+1> Translation Phase
+~~~~~~~~~~~~~~~~~~~~
+	● Description: The JSP file is translated into a servlet by the JSP engine.
+	● Purpose: Converts JSP syntax into Java servlet code.
+	● Key Point: This step happens once unless the JSP file is modified.
+
+2> Compilation Phase
+~~~~~~~~~~~~~~~~~~~~
+	● Description: The generated servlet is compiled into bytecode.
+	● Purpose: Transforms the servlet into an executable .class file.
+	● Key Point: Compilation occurs after translation and is only done when the JSP changes.
+	
+3> Loading and Initialization Phase
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	● Description: The servlet class is loaded by the servlet container, and its init() method is called.
+	● Purpose: Initializes the servlet for handling requests.
+	● Key Point: init() is executed only once when the servlet is loaded.
+
+4> Request Processing Phase
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	● Description: The JSP handles client requests via the service() method.
+	● Purpose: Processes requests like GET, POST, etc., and generates dynamic content.
+	● Key Point: Each request triggers the service() method to be executed.
+
+5> Destroy Phase
+~~~~~~~~~~~~~~~~
+	● Description: The destroy() method is called when the JSP is removed from memory.
+	● Purpose: Cleanup resources before shutting down the JSP instance.
+	● Key Point: This method is called once when the JSP is being destroyed.
+
+
+
+Summary:
+--------
+- The JSP lifecycle involves five phases: Translation, Compilation, Loading & Initialization, Request Processing, 
+  and Destruction.
+- The lifecycle follows the same pattern as servlets, with JSPs being converted into servlets behind the scenes.
