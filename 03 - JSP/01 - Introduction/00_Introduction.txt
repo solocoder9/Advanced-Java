@@ -1,0 +1,34 @@
+JavaServer Pages
+----------------
+- JavaServer Pages(JSP) is a technology used for creating dynamic web pages using Java.
+- It allows developers to embed Java code in HTML to produce dynamic contend.
+- JSP pages are compiled into servlets, which handle HTTP request and generate HTML responses.
+- This This approach helps separate the presentation layer from business logic, simplifying 
+  web development and maintenance.
+- In simple words, JSP is the part of the Java EE(Enterprise Edition) platform and is designed 
+  to simplify the creation of web applications by separating the user interface from businness
+  logic.
+ 
+Advantages
+~~~~~~~~~~
+    ● Separation of presentation and logic.
+    ● Custom tags and libraries.
+    ● Scalability and performance(Compiled once).
+
+
+How JSP Works
+~~~~~~~~~~~~~
+1> Request processing:
+	- When a user requests a JSP page, the server checks if the JSP page has been compiled into 
+	  a servet.
+	- If not, the server compiles the JSP page into a servet(a Java class) and then loads and 
+	  execute this servlet.
+	  
+2> Servlet Execution:
+	- The compiled servlet process the request and generates the HTML response.
+	- This servlet code handles dynamic content generation and interact with other serever-side
+	  components if necessary.
+	  
+3> Response Delivery:
+	- The generated HTML response is sent back to the user's browser, where it is rendered as a 
+	  web page.
