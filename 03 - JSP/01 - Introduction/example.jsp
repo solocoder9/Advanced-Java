@@ -7,14 +7,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>I am Solo</h3>
+	<h3>Welcome to JSP</h3>
 
-	<%
-	String name = "Solo";
-	int length = name.length();
-	%>
+    <%
+        // Declaring a string variable
+        String message = "Hello, JSP!";
+        // Calculating the length of the string
+        int length = message.length();
+    %>
 
-	<%=length%>
-
+    <!-- Display the string and its length -->
+    <p>Message: <%= message %></p>
+    <p>Length of message: <%= length %></p>
 </body>
 </html>
