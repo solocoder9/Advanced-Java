@@ -1,0 +1,82 @@
+JSP Implicit objects
+--------------------
+- In JSP, implicit objects are pre-defined objects that can be accessed directly without needing
+  ecplicit declaration.
+- These objects are automatically available to the JSP page, offering access to various elements
+  of the request, response, and session.
+- There are 9 JSP implicit objects:
+        1. request
+        2. response
+        3. session
+        4. application
+        5. out
+        6. config
+        7. pageContext
+        8. page
+        9. exception
+
+1. request
+~~~~~~~~~~
+    ● Type: HttpServletRequest
+    ● Usage: Handles HTTP request data.
+    ● Common Methods:
+        ○ getParameter(String name): Retrieve form data.
+        ○ getAttribute(String name): Access request-scoped attributes.
+
+2. response
+~~~~~~~~~~~
+    ● Type: HttpServletResponse
+    ● Usage: Controls HTTP response, manages headers, and redirects.
+    ● Common Methods:
+        ○ sendRedirect(String location): Redirect to another resource.
+        ○ addCookie(Cookie cookie): Add a cookie to the response.
+
+3. out
+~~~~~~
+    ● Type: JspWriter
+    ● Usage: Writes output to the client.
+    ● Common Methods:
+        ○ println(String message): Write a string to the response.
+        ○ flush(): Flush the stream content.
+
+4. session
+~~~~~~~~~~
+    ● Type: HttpSession
+    ● Usage: Manages user session data across multiple requests.
+    ● Common Methods:
+        ○ setAttribute(String name, Object value): Store session data.
+        ○ getAttribute(String name): Retrieve session data.
+
+5. application
+~~~~~~~~~~~~~~
+    ● Type: ServletContext
+    ● Usage: Stores global application-level data.
+    ● Common Methods:
+        ○ setAttribute(String name, Object value): Set application-wide data.
+        ○ getAttribute(String name): Access global data.
+
+6. config
+~~~~~~~~~
+    ● Type: ServletConfig
+    ● Usage: Access servlet configuration and initialization parameters.
+    ● Common Methods:
+        ○ getInitParameter(String name): Get initialization parameters.
+
+7. pageContext
+~~~~~~~~~~~~~~
+    ● Type: PageContext
+    ● Usage: Provides access to all JSP-related objects and scopes.
+    ● Common Methods:
+        ○ findAttribute(String name): Search for an attribute across scopes.
+
+8. page
+~~~~~~~
+    ● Type: Object
+    ● Usage: Refers to the current JSP page instance (equivalent to this in Java).
+
+9. exception
+~~~~~~~~~~~~
+    ● Type: Throwable
+    ● Usage: Available only in JSP error pages to handle exceptions.
+    ● Common Method:
+        ○ getMessage(): Get the error message.
