@@ -1,0 +1,22 @@
+Accessing Request Parameter
+---------------------------
+- Accessing Request Parameters in JSP refers to the process of retrieving data that is sent from 
+  the client (such as through a form submission or URL query string) to the server. 
+- This data is typically sent as part of the HTTP request and can be accessed using the request 
+  object in JSP.
+  
+How Request Parameters Work
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	● Form Submission: When a user submits a form, the input values from the form fields are sent
+	  to the server as request parameters.
+	  
+	● Query Strings: Request parameters can also be passed via URL query strings 
+	  (e.g., example.jsp?name=John&age=30).
+	  
+request.getParameter():
+~~~~~~~~~~~~~~~~~~~~~~~
+- The request.getParameter() method is used to retrieve the values of these parameters.
+- Syntax:
+	String value = request.getParameter("parameterName");
+	
+	○ parameterName: The name attribute of the form field or the query string parameter
