@@ -1,0 +1,21 @@
+Handling Request and Responses using request and response objects
+-----------------------------------------------------------------
+- In JSP, request and response objects are used to handle HTTP requests and responses between the 
+client (browser) and the server.
+
+● Request Object: 
+~~~~~~~~~~~~~~~~~
+- Used to retrieve data sent from the client, such as form data or URL parameters.
+- Essential method of request objects:
+	○ getParameter(String name): Retrieves form data or URL query string parameter.
+	○ getAttribute(String name): Retrieves attributes stored in the request.
+	○ getMethod(): Returns the HTTP method (GET/POST) used in the request.
+	  
+● Response Object: 
+~~~~~~~~~~~~~~~~~~
+- Used to send data back to the client, such as HTML content or redirection instructions.
+- Essential method to response objects:
+	○ setContentType(String type): Sets the content type of the response.
+	○ sendRedirect(String location): Redirects the client to another resource (JSP, servlet, or 
+	  external URL).
+	○ getWriter(): Returns a PrintWriter object to send text response to the client.
