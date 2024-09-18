@@ -1,0 +1,38 @@
+Important and commonly used Expression Language(EL) expressions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++------------------------------+-----------------------------------------------------+--------------------------------------+
+| **Expression**               | **Description**                                     | **Example**                          |
++------------------------------+-----------------------------------------------------+--------------------------------------+
+| ${param.paramName}           | Retrieves a request parameter value.                | ${param.username}                    |
++------------------------------+-----------------------------------------------------+--------------------------------------+
+| ${paramValues.paramName}     | Retrieves all values of a request parameter.        | ${paramValues.hobbies[0]}            |
++------------------------------+-----------------------------------------------------+--------------------------------------+
+| ${header.headerName}         | Retrieves a request header value.                   | ${header["User-Agent"]}              |
++------------------------------+-----------------------------------------------------+--------------------------------------+
+| ${headerValues.headerName}   | Retrieves all values of a request header as an array| ${headerValues.accept[0]}            |
++------------------------------+-----------------------------------------------------+--------------------------------------+
+| ${cookie.cookieName.value}   | Retrieves the value of a cookie.                    | ${cookie.userId.value}               |
++------------------------------+-----------------------------------------------------+--------------------------------------+
+| ${initParam.paramName}       | Retrieves the value of a context initialization     | ${initParam.configVar}               |
+|                              | parameter.                                          |                                      |
++------------------------------+-----------------------------------------------------+--------------------------------------+
+| ${pageScope.attributeName}   | Retrieves an attribute from the page scope.         | ${pageScope.username}                |
++------------------------------+-----------------------------------------------------+--------------------------------------+
+| ${requestScope.attributeName}| Retrieves an attribute from the request scope.      | ${requestScope.orderId}              |
++------------------------------+-----------------------------------------------------+--------------------------------------+
+| ${sessionScope.attributeName}| Retrieves an attribute from the session scope.      | ${sessionScope.user}                 |
++------------------------------+-----------------------------------------------------+--------------------------------------+
+| ${applicationScope.attributeName}| Retrieves an attribute from the application scope.| ${applicationScope.adminEmail}     |
++------------------------------+-----------------------------------------------------+--------------------------------------+
+| ${empty variable}            | Checks if a variable (e.g., list or string) is empty| ${empty sessionScope.cart}           |
++------------------------------+-----------------------------------------------------+--------------------------------------+
+| ${var.property}              | Accesses a JavaBean property.                       | ${user.name}                         |
++------------------------------+-----------------------------------------------------+--------------------------------------+
+| ${var[index]}                | Accesses a specific element in an array or list.    | ${students[0].name}                  |
++------------------------------+-----------------------------------------------------+--------------------------------------+
+| ${fn:length(var)}            | Retrieves the length of a string or collection      | ${fn:length(username)}               |
+|                              | using JSTL functions.                               |                                      |
++------------------------------+-----------------------------------------------------+--------------------------------------+
+| ${fn:contains(str, substr)}  | Checks if a string contains a substring using JSTL  | ${fn:contains(name, 'John')}         |
+|                              | functions.                                          |                                      |
++------------------------------+-----------------------------------------------------+--------------------------------------+
