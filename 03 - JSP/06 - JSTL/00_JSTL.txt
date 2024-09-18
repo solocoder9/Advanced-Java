@@ -1,0 +1,67 @@
+JSP Standard Tag Library(JSTL)
+------------------------------
+- JSTL is a collection of tags that simplifies the development of JSP pages by abstracting java
+  code and making it easier to implement logic, iteration and other common task.
+  
+Scopes in JSTL
+~~~~~~~~~~~~~~
+	● pageScope: Local to the page.
+	● requestScope: Accessible during the request.
+	● sessionScope: Accessible throughout the session.
+	● applicationScope: Accessible throughout the web application.
+
+	
+Common JSTL Tags and Tasks:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
++---------------------------+----------------------------------------------------------+--------------------------------------------------+
+| **Tag**                   | **Purpose**                                              | **Example**                                      |
++---------------------------+----------------------------------------------------------+--------------------------------------------------+
+| <c:out>                   | Outputs the value of an expression.                      | <c:out value="${user.name}" />                   |
++---------------------------+----------------------------------------------------------+--------------------------------------------------+
+| <c:set>                   | Sets a variable or updates the value of an expression.   | <c:set var="name" value="John" />                |
++---------------------------+----------------------------------------------------------+--------------------------------------------------+
+| <c:if>                    | Conditionally renders content if the expression is true. | <c:if test="${user.age > 18}">Adult</c:if>       |
++---------------------------+----------------------------------------------------------+--------------------------------------------------+
+| <c:choose>                | Defines a conditional logic with multiple options.       | <c:choose> + <c:when test="${condition}">        |
++---------------------------+----------------------------------------------------------+--------------------------------------------------+
+| <c:when> and <c:otherwise>| Works with <c:choose> for multiple conditions.           | <c:when test="${user.age >= 18}">...</c:when>    |
++---------------------------+----------------------------------------------------------+--------------------------------------------------+
+| <c:forEach>               | Iterates over a collection (arrays, lists, etc.).        | <c:forEach var="item" items="${users}">... </c:forEach> |
++---------------------------+----------------------------------------------------------+--------------------------------------------------+
+| <c:import>                | Imports content from a URL.                              | <c:import url="header.jsp" />                    |
++---------------------------+----------------------------------------------------------+--------------------------------------------------+
+| <c:remove>                | Removes a variable from the specified scope.             | <c:remove var="name" />                          |
++---------------------------+----------------------------------------------------------+--------------------------------------------------+
+| <fmt:formatDate>          | Formats dates according to the specified format.         | <fmt:formatDate value="${now}" pattern="MM/dd/yyyy" /> |
++---------------------------+----------------------------------------------------------+--------------------------------------------------+
+| <fmt:message>             | Retrieves a localized message from a resource bundle.    | <fmt:message key="welcome.message" />            |
++---------------------------+----------------------------------------------------------+--------------------------------------------------+
+
+
+Common Task Examples:
+---------------------
+	● Conditional Rendering:
+	~~~~~~~~~~~~~~~~~~~~~~~~
+		<c:choose>
+    		<c:when test="${user.age >= 18}">
+        		<p>Welcome, Adult!</p>
+   			</c:when>
+    		<c:otherwise>
+        		<p>Welcome, Young User!</p>
+    		</c:otherwise>
+		</c:choose>
+		
+	● Looping through a List:
+	~~~~~~~~~~~~~~~~~~~~~~~~~
+		<c:forEach var="user" items="${users}">
+    		<p>${user.name} - ${user.age}</p>
+		</c:forEach>
+		
+	● Setting and Using Variables:
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		<c:set var="message" value="Hello, World!" />
+		<p>${message}</p>
+
+	● Formatting Dates:
+	~~~~~~~~~~~~~~~~~~
+		<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" />
