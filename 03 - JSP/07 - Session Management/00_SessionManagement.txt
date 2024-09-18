@@ -1,0 +1,81 @@
+Session Management
+------------------
+- Session management in JSP (JavaServer Pages) refers to the techniques used to maintain 
+  state and track user interactions across multiple requests during a user's session on 
+  a web application.
+
+Why Session Management is Important:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ● Stateful Communication: HTTP is stateless; session management allows for a persistent 
+      state, making it possible to track user data as they navigate through a web application.
+
+    ● User Experience: Enhances user experience by remembering user preferences, login status, 
+      and shopping cart contents.
+
+Key Concepts
+------------
+1> Session Object:
+~~~~~~~~~~~~~~~~~~
+- Each user session is represented by a HttpSession object.
+- It is created when a user first accesses a web application and lasts until the session times 
+  out or is invalidated.
+
+2> Creating a Session:
+~~~~~~~~~~~~~~~~~~~~~~
+    HttpSession session = request.getSession();
+
+    ○ If a session exists, it returns the existing session; if not, it creates a new one.
+
+3> Session Attributes:
+~~~~~~~~~~~~~~~~~~~~~~
+- You can store user-specific data in the session using key-value pairs.
+    session.setAttribute("username", "JohnDoe");
+    String username = (String) session.getAttribute("username");
+
+4> Session Timeout:
+~~~~~~~~~~~~~~~~~~~
+- Sessions can be configured to expire after a certain period of inactivity.
+    session.setMaxInactiveInterval(30 * 60); // 30 minutes
+
+    ○ You can also set the timeout in the web.xml file.
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+5> Invalidating a Session:
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+- To log out a user or clear session data:
+    session.invalidate();
+
+6> Session Tracking Methods:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ● Cookies: The most common method. A unique session ID is stored in a cookie on the 
+      client’s browser.
+    ● URL Rewriting: Appends the session ID to the URL. Used when cookies are disabled.
+    ● Hidden Form Fields: Stores session IDs in hidden fields in forms.
+
+
+
+Best Practices
+--------------
+● Avoid Storing Sensitive Data: Do not store sensitive information directly in session attributes. 
+  Use secure methods to handle sensitive data.
+● Session Management on the Server: Always validate session state on the server side to prevent 
+  session hijacking.
+● Keep Sessions Short: Set reasonable session timeouts to enhance security.
+● Use HTTPS: Secure communication to prevent session hijacking through sniffing.
+
+Common Use Cases
+----------------
+● User Authentication: Track whether a user is logged in.
+● Shopping Carts: Maintain a user's selected items while they browse.
+● User Preferences: Store user preferences like language or layout choices.
+
+Summary
+-------
+● Session Object: Managed through HttpSession.
+● Lifecycle: Created on first request, can be invalidated, and times out after inactivity.
+● Attributes: Store user-specific data as key-value pairs.
+● Tracking: Use cookies, URL rewriting, or hidden fields for session tracking.
+● Best Practices: Secure sensitive data, keep sessions short, and use HTTPS.
