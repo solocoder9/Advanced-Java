@@ -1,0 +1,51 @@
+Expression Language(EL) in JSP
+------------------------------
+- Expression Language (EL) is a feature in JSP that simplifies accessing data stored in JavaBeans, 
+  request attributes, session attributes, and other objects without using complex Java code. 
+- It allows developers to write more concise and readable JSP code.
+
+Advantages
+~~~~~~~~~~
+● Simplifies JSP Code: Reduces the need for scriptlets, resulting in cleaner, more readable JSP pages.
+
+● Easy Data Access: Makes accessing attributes and JavaBeans properties straightforward.
+
+● Expression Evaluation: Enables powerful expression evaluation directly within the JSP pages.
+
+
+Key Features
+------------
+1> Implicit Objects: 
+~~~~~~~~~~~~~~~~~~~~
+- EL provides access to implicit objects, making it easier to retrieve common attributes. 
+- Some important implicit objects:
+	● pageScope: Access attributes stored in the page scope.
+	● requestScope: Access attributes stored in the request scope.
+	● sessionScope: Access attributes stored in the session scope.
+	● applicationScope: Access attributes stored in the application scope.
+	
+2> Syntax: 
+~~~~~~~~~~~
+- EL uses ${expression} to access variables and evaluate expressions. 
+- For example:
+	${username}
+
+3> Operators: 
+- EL supports operators for:
+	● Arithmetic (+, -, *, /, %)
+	● Logical (&&, ||, !)
+	● Relational (==, !=, <, >, <=, >=)
+	● Empty check (empty)
+	
+4> Accessing Beans: 
+~~~~~~~~~~~~~~~~
+- EL allows direct access to JavaBeans properties. 
+- For example, if there is a bean with a name property:
+	${user.name}
+	
+5> Functions: 
+~~~~~~~~~~
+- EL supports calling static functions from custom tag libraries (JSTL). 
+- For example:
+	${fn:length(username)}
+
