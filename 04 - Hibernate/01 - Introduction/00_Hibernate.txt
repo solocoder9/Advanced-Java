@@ -1,0 +1,83 @@
+Hibernate Framework
+-------------------
+- Hibernate is an open-source Object-Relational Mapping(ORM) framework for Java.
+- It simplifies data manipulation by mapping Java objects to database tables, allowing developers to
+  interact with databases using Java objects instead of complex SQL queries.
+- Hibernate implements the specifications of Java Persistence API(JPA) for data persistence.
+- Hibernate internally uses the JDBC API to interact with the database;
+- It was invented by Gavin King in 2001.
+
+Advantages of Hibernate
+~~~~~~~~~~~~~~~~~~~~~~~
+- Hibernate is open-source and light weight.
+- It eliminates the need for complex SQL queries.
+- Provides built-in transaction management.
+- Supports caching mechanisms for optimized performance.
+- Simplifies CRUD operations and reduces boilerplate code.
+- Automatically generates SQL based on object structure.
+- Promotes loose coupling.
+
+Disadvantages of Hibernate
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Complex mapping can become difficult to manage.
+- Performance overhead due to ORM abstraction layer.
+
+
+
+■ Core Concepts
+-------------
+1. ORM (Object-Relational Mapping)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- ORM is a programming technique for converting data between incompatible type systems using object-
+  oriented programming languages.
+- It maps Java classes to database tables and Java data types to SAL data types.
+
+2. JPA (Java Persistence API)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- JPA is a Java specification that provides certain functionality and standard to ORM tools.
+- The javax.persistence package contains the JPA classes and interfaces.
+
+3. Hibernate Architecture:
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+	● Configuration Object:
+		- Represents the configuration file (hibernate.cfg.xml), which contains database and Hibernate 
+		  configurations.
+	● SessionFactory: 
+		- A thread-safe and immutable object responsible for creating Session objects. It is initialized 
+		  once and used throughout the application.
+	●  Session: 
+		- A lightweight, non-thread-safe object used to interact with the database. It provides methods 
+		  to create, read, and delete persistent objects.
+	● Transaction: 
+		- Manages database transactions, ensuring data integrity and consistency.
+	●  Query & Criteria: 
+		- Used for fetching data from the database. Supports both HQL (Hibernate Query Language) and SQL.
+
+4. Mapping:
+~~~~~~~~~~~
+● Entity: A lightweight Java class annotated with @Entity that represents a table in the database.
+● @Table: Specifies the table name associated with the entity.
+● @Id: Denotes the primary key of the entity.
+● @Column: Maps a class field to a column in the database table.
+
+5. Hibernate Annotations:
+~~~~~~~~~~~~~~~~~~~~~~~~~
+● @Entity, @Table, @Id, @Column: Basic annotations for mapping.
+● @OneToOne, @OneToMany, @ManyToOne, @ManyToMany: Define relationships between entities.
+● @JoinColumn: Specifies the foreign key column.
+
+6. Hibernate Query Language (HQL):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- HQL is an object-oriented query language similar to SQL but operates on persistent objects rather than
+  tables.
+- Example: 
+	SELECT e FROM Employee e WHERE e.salary > 50000.
+
+7. Caching:
+~~~~~~~~~~~
+● First-Level Cache: 
+	- Associated with the Session object. 
+	- It is enabled by default and stores entities within the session scope.
+● Second-Level Cache: 
+	- Configurable and associated with the SessionFactory. 
+	- It caches entities across sessions.
