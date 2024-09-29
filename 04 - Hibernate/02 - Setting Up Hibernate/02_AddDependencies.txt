@@ -24,7 +24,7 @@ Official MVN Repository link: https://mvnrepository.com/artifact/mysql/mysql-con
 		<version>8.0.30</version>
 	</dependency>
 
-3. Add JUnit Dependency (Opetional)
+3. Add JUnit Dependency (Optional)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Official MVN Repository link: https://mvnrepository.com/artifact/junit/junit
 - Go to the link, select the latest version, and copy the dependency.
