@@ -1,0 +1,30 @@
++-------------------------+-----------------------------------------+-----------------------------------------------+
+| **Aspect**              | **JDBC**                                | **Benefits of Using Hibernate**               |
++-------------------------+-----------------------------------------+-----------------------------------------------+
+| **Definition**          | Low-level API for database interaction  | High-level ORM framework for simplified data  |
+|                         |                                         | access and manipulation.                      |
++-------------------------+-----------------------------------------+-----------------------------------------------+
+| **Code Complexity**     | Requires extensive SQL and boilerplate  | Reduces boilerplate code with annotations and |
+|                         | code for CRUD operations                | automatic mapping.                            |
++-------------------------+-----------------------------------------+-----------------------------------------------+
+| **Data Mapping**        | Manual mapping between SQL and Java     | Automatic mapping of Java objects to database |
+|                         | objects                                 | tables, simplifying data handling.            |
++-------------------------+-----------------------------------------+-----------------------------------------------+
+| **Query Language**      | Uses raw SQL directly                   | Uses HQL (Hibernate Query Language), which    |
+|                         |                                         | is more object-oriented.                      |
++-------------------------+-----------------------------------------+-----------------------------------------------+
+| **Transaction Management| Manual handling required                | Built-in transaction management with less     |
+|                         |                                         | boilerplate.                                  |
++-------------------------+-----------------------------------------+-----------------------------------------------+
+| **Caching**             |No built-in caching; manual implementation| Supports first-level and second-level caching,|
+|                         |                                         | improving performance.                        |
++-------------------------+-----------------------------------------+-----------------------------------------------+
+| **Lazy Loading**        | Not supported                           | Supports lazy loading of associated objects,  |
+|                         |                                         | enhancing performance and resource usage.     |
++-------------------------+-----------------------------------------+-----------------------------------------------+
+| **Database Independence*| Tightly coupled with specific SQL       | Provides a level of database independence,    |
+|                         | dialects                                | allowing easier switching between databases.  |
++-------------------------+-----------------------------------------+-----------------------------------------------+
+| **Development Speed**   | Slower due to manual coding and management | Faster development cycles due to reduced   |
+|                         |                                         | complexity and boilerplate.                   |
++-------------------------+-----------------------------------------+-----------------------------------------------+
