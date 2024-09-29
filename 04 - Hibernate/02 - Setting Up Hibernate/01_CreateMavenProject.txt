@@ -12,9 +12,9 @@ Step 2: Select Archetype
 
 Step 3: Project Name
 ~~~~~~~~~~~~~~~~~~~~
-● Enter the Group Id (like a package name).
+● Enter the Group Id (Identifier for the project).
     Example: com.test
-● Enter the Artifact Id (project name).
+● Enter the Artifact Id (Project name).
     Example: MavenProject
 ● Enter the Package name.
     Example: com.test
