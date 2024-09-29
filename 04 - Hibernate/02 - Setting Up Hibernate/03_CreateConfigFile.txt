@@ -1,0 +1,33 @@
+Creating a Hibernate configuration file (hibernate.cfg.xml)
+-----------------------------------------------------------
+1. Create XML File
+~~~~~~~~~~~~~~~~~~
+- Right-click on `src/main/resources` (not `src/main/java`), select "New," and create a new XML 
+  file named `hibernate.cfg.xml`.
+
+2. Add the Hibernate Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+- Copy the above !DOCTYPE code snippet and paste it into your 'hibernate.cfg.xml' file.
+- You can also download or copy this from the following link: - "https://hibernate.org/dtd/"
+- Go to that link, download the 'hibernate-configuration-3.0.dtd'.
+
+3. Configure the database
+~~~~~~~~~~~~~~~~~~~~~~~~~
+- Add the driver, URL, username, password, etc., using `<property>` tags inside
+ the `<session-factory>` tag in your `hibernate.cfg.xml` file.
+- Example-
+    <hibernate-configuration>
+        <session-factory>
+            <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+            <property name="connection.url">jdbc:mysql://localhost:3306/mydatabase</property>
+            <property name="connection.username">your_username</property>
+            <property name="connection.password">your_password</property>
+            <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+            <property name="hbm2ddl.auto">update</property>
+            <property name="show_sql">true</property>
+        </session-factory>
+    </hibernate-configuration>
