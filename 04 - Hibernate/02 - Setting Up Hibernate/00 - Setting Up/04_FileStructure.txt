@@ -1,0 +1,24 @@
+Directory Structure for a Maven project using Hibernate
+--------------------------------------------
+
+MavenProject
+│
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── test
+│   │   │           ├── App.java
+│   │   │           └── model
+│   │   │               └── YourEntity.java
+│   │   │
+│   │   └── resources
+│   │       └── hibernate.cfg.xml
+│   │
+│   └── test
+│       └── java
+│           └── com
+│               └── test
+│                   └── AppTest.java
+│
+└── pom.xml
