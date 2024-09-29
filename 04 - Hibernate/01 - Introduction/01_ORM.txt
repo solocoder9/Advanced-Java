@@ -1,0 +1,17 @@
+Object-Relational Mapping(ORM)
+------------------------------
+- ORM is a programming technique that enables developers to interact with a relational database using 
+  object-oriented programming principles. 
+- It simplifies database operations by allowing you to work with data as objects, rather than writing 
+  raw SQL queries. 
+- This abstraction helps manage database interactions more efficiently and enhances code maintainability.
+
+Key Benefits of ORM:
+~~~~~~~~~~~~~~~~~~~~
+- Reduces the need for SQL code.
+- Automatically maps database tables to object classes.
+- Provides features like caching and lazy loading.
+- Facilitates database independence.
+
+Common ORM Frameworks: Hibernate, JPA, Entity Framework.
+
