@@ -36,8 +36,8 @@ Key Points
       be reused.
     - The SessionFactory is configured once and can produce multiple Session instances.
 
-Common Methods of Session
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Common Methods
+~~~~~~~~~~~~~~
     ● save(): To persist a new entity.
     ● update(): To update an existing entity.
     ● get(): To retrieve an entity by its identifier.
