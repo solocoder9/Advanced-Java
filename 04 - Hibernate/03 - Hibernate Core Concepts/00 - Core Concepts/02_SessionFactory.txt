@@ -1,0 +1,58 @@
+SessionFactory in Hibernate
+---------------------------
+- A SessionFactory in Hibernate is a thread-safe, heavyweight object that is responsible for
+  creating 'Session' instances.
+- It is configured once and can be reuse across the applications, managing the connection to
+  the database and providing access to the underlying data model.
+
+Key Featurs:
+~~~~~~~~~~~~
+● Thread-Safe:
+    - Unlike Session, the SessionFactory is designed to be shared among multiple threads, 
+      allowing it to handle concurrent database operations efficiently.
+
+● Configuration:
+    - It is created from a configuration file (typically hibernate.cfg.xml) or programmatically
+      using the Configuration class. This configuration includes database connection settings 
+      and mapping information.
+
+● Session Creation:
+    - The primary function of the SessionFactory is to produce Session instances, which are then
+      used to perform CRUD operations.
+
+● Caching:
+    - SessionFactory provides a first-level cache for storing entity instances. 
+    - It can also be configured with a second-level cache for optimizing performance across 
+      multiple Sessions.
+
+● Resource Management:
+    - It manages database connections and resources efficiently. Once created, the SessionFactory 
+      should remain open for the duration of the application, typically closed only when the 
+      application is shutting down.
+
+● Factory Design Pattern:
+    - Implements the Factory design pattern, encapsulating the logic for creating and managing 
+      Session instances.
+
+● Lifecycle:
+    - SessionFactory is usually created at application startup and can remain in memory throughout 
+      the application’s lifecycle, providing Sessions on demand.
+
+Common Methods
+~~~~~~~~~~~~~~
+    ● openSession(): Creates a new Session instance.
+    ●  getCurrentSession(): Returns the current Session bound to the context, or creates a new one 
+                            if none exists.
+    ●  close(): Closes the SessionFactory and releases all resources.
+
+
+
+
+Quick Notes:
+~~~~~~~~~~~~
+● Thread-Safe: Can be shared among multiple threads.
+● Configuration: Set up via hibernate.cfg.xml or programmatically.
+● Creates Sessions: Main function is to produce Session objects.
+● Caching: Supports first-level and second-level caching.
+● Resource Management: Efficiently manages database connections.
+● Lifecycle: Created once and used throughout the application.
