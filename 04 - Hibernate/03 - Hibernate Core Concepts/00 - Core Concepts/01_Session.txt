@@ -44,3 +44,14 @@ Common Methods of Session
     ● delete(): To remove an entity from the database.
     ● beginTransaction(): To start a transaction.
     ●  close(): To close the session.
+
+
+
+Quick Notes:
+~~~~~~~~~~~~
+● Interface for database interaction.
+● Manages persistence lifecycle of entities.
+● Operates within a transaction.
+● Not thread-safe; create a new Session for each request.
+● Common methods: save(), update(), get(), delete(), beginTransaction(), close().
+● Created from a SessionFactory, which is thread-safe.
