@@ -1,0 +1,46 @@
+Session in Hibernate
+--------------------
+- In Hibernate, A session is a fundamental interface that provides a way to interact with 
+  the database.
+- It acts as a gateway for performing CRUD (Create, Read, Updata, Delete) operations and 
+  manages the persistence lifecycle of entity objects.
+- Each session is lightweight, not thread-safe, and should be opened and closes for each 
+  request or transaction.
+
+Key Points 
+~~~~~~~~~~
+● Purpose:
+    - The Session interface is used to establish a connection between the application and 
+      the database.
+    - It manages the database operations and the lifecycle of persistence objects.
+
+● Lifecycle:
+    - A Session is created when an application starts a transaction and is closed when the
+      transactions is completed.
+    - It is lightweight and designed to be opened and closed frequently, typically for a 
+      single unit of works.
+
+● Persistence Context:
+    - Each Session maintains a persistence context, which is a set of entity instances that
+      Hibernate manages.
+    - When you retrieve or save an entity, it is stored in this context, allowing Hibernate
+      to track changes.
+
+● Thread Safety:
+    - Sessions are not thread-safe, meaning that you should not share a Session instance 
+      between multiple threads. 
+    - It is advisable to create a new Session for each request in a web application.
+
+● Session Factory:
+    - Sessions are created from a 'SessionFactory', which is a thread-safe object that can 
+      be reused.
+    - The SessionFactory is configured once and can produce multiple Session instances.
+
+Common Methods of Session
+~~~~~~~~~~~~~~~~~~~~~~~~~
+    ● save(): To persist a new entity.
+    ● update(): To update an existing entity.
+    ● get(): To retrieve an entity by its identifier.
+    ● delete(): To remove an entity from the database.
+    ● beginTransaction(): To start a transaction.
+    ●  close(): To close the session.
