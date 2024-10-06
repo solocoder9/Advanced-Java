@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class RetriveData2 {
+public class RetrieveData2 {
     public static void main(String[] args) {
 
         // 1. Load and register the JDBC driver
