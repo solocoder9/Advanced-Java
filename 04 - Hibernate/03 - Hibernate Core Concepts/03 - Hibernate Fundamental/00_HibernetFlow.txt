@@ -1,0 +1,36 @@
+Hibernate Fundamental Flow
+--------------------------
+1. Load Configuration:
+~~~~~~~~~~~~~~~~~~~~~~
+● Load the Hibernate configuration file (hibernate.cfg.xml), which contains database connection 
+  settings and mapping details.
+
+2. Create SessionFactory:
+~~~~~~~~~~~~~~~~~~~~~~~~~
+● Create a SessionFactory instance from the configuration. The SessionFactory is thread-safe and 
+  serves as a factory for creating Session instances.
+
+3. Create Session:
+~~~~~~~~~~~~~~~~~~
+● Open a Session from the SessionFactory. The Session is not thread-safe, so it should be used 
+  within a single thread for CRUD operations.
+
+4. Begin Transaction:
+~~~~~~~~~~~~~~~~~~~~~
+● Start a transaction using the Session instance. This groups multiple operations into a single
+  atomic unit of work.
+
+5. Perform CRUD Operations:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+● Use the Session instance to perform CRUD operations (e.g., save, update, delete).
+  example, session.save(emp) to save an Employee object.
+
+6. Commit Transaction:
+~~~~~~~~~~~~~~~~~~~~~~
+● Call commit() on the Transaction instance to make all changes permanent in the database. 
+  If any errors occur, you can also roll back the transaction to maintain data integrity.
+
+7. Close Session and SessionFactory:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+● Close the Session to release resources.
+● Finally, close the SessionFactory to avoid resource leaks and free up database connections.
