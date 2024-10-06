@@ -1,0 +1,48 @@
+Transaction in Hibernate
+------------------------
+- A Transaction in Hibernate is a mechanism that ensures a sequence of operations are executed as a
+  single unit or work.
+- It guarantees data integrity and follows the ACID properties(Atomicity, Consistency, Isolation, 
+  Durability), allowing changes to be commited or rolled back.
+
+Key Features:
+~~~~~~~~~~~~~
+● ACID Compliance:
+	- Transactions ensure that database operations are performed reliably and maintain data integrity.
+
+● Begin and Commit:
+	- A transaction begins with beginTransaction() and ends with either commit() (to save changes) or 
+	  rollback() (to undo changes in case of an error).
+
+● Isolation Levels:
+	- Supports different isolation levels (e.g., READ_COMMITTED, SERIALIZABLE) that determine how 
+	  transaction integrity is visible to other transactions.
+	  
+● Exception Handling:
+	- If an exception occurs during a transaction, it can be rolled back to maintain data consistency.
+
+● Lifecycle:
+	- Transactions are typically short-lived, encompassing a single logical operation involving one or 
+	  more CRUD operations.
+
+● Integration with Sessions:
+	- Transactions are managed within a Session. Each Session can have one active Transaction at a time.
+	
+Common Methods
+~~~~~~~~~~~~~~
+	● begin(): Starts a new transaction.
+	● commit(): Commits the current transaction, saving all changes.
+	● rollback(): Undoes changes made during the current transaction.
+	● isActive(): Checks if the transaction is currently active.
+	
+	
+	
+Quick Notes:
+------------
+● ACID Compliance: Ensures reliable database operations.
+● Begin and Commit: Starts with beginTransaction() and ends with commit() or rollback().
+● Isolation Levels: Determines visibility of transaction changes.
+● Exception Handling: Allows rollback on errors to maintain consistency.
+● Lifecycle: Typically short-lived, encapsulating logical operations.
+● Managed Within Sessions: Each Session has one active Transaction.
+
