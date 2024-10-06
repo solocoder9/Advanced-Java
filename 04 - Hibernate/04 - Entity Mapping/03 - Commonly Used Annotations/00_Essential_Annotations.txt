@@ -1,0 +1,40 @@
+Essential Hibernate Anotations
+------------------------------
+1. Entity Mapping
+~~~~~~~~~~~~~~~~~
+● @Entity: Marks a class as an entity.
+● @Table: Specifies the table name (optional if the default naming convention is used).
+
+2. Primary Key
+~~~~~~~~~~~~~~
+● @Id: Denotes the primary key.
+● @GeneratedValue: Specifies the generation strategy for the primary key.
+
+3. Column Mapping
+~~~~~~~~~~~~~~~~~
+● @Column: Maps a field to a database column (useful for defining column attributes).
+
+4. Relationship Annotations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+● @OneToOne: Defines a one-to-one relationship.
+● @OneToMany: Defines a one-to-many relationship.
+● @ManyToOne: Defines a many-to-one relationship.
+● @ManyToMany: Defines a many-to-many relationship.
+● @JoinColumn: Specifies the foreign key column for relationships.
+
+5. Fetch Type
+~~~~~~~~~~~~~
+● @Fetch: Controls fetching strategy (commonly used with relationships).
+● Options: FetchType.LAZY (default) and FetchType.EAGER.
+
+6. Cascading
+~~~~~~~~~~~~
+● @Cascade: Specifies cascading operations for relationships (e.g., CascadeType.ALL).
+
+7. Versioning
+~~~~~~~~~~~~~
+● @Version: Used for optimistic locking to manage concurrent updates.
+
+8. Transient
+~~~~~~~~~~~~
+● @Transient: Indicates that a field should not be persisted.
