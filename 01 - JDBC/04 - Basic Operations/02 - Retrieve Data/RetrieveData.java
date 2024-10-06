@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class RetriveData {
+public class RetrieveData {
     public static void main(String[] args) throws ClassNotFoundException {
         
         // JDBC URL, username, and password of MySQL server
