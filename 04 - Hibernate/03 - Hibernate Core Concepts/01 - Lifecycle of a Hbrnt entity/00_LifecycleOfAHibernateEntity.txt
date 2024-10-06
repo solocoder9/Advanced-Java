@@ -1,0 +1,79 @@
+Lifecycle of a Hibernate Entity
+-------------------------------
+- The lifecycle of a Hibernate entity describes the various states that an entity can be in during
+  its interaction with the Hibernate framework.
+- It includes four key states: Transient (not yet persisted), Persistent (associated with a session 
+  and tracked), Detached (not associated with a session but exists in the database), and 
+  Removed (marked for deletion).
+ 
+ 
+Key States
+----------
+1. Transient:
+~~~~~~~~~~~~~
+● Definition: 
+	- The entity is created but not yet associated with a Hibernate session or database.
+● Characteristics:
+	- Not persisted in the database.
+	- No identifier assigned.
+	- Changes to the entity are not tracked by Hibernate.
+● Example:
+	Employee emp = new Employee(); // Transient state
+
+2. Persistent:
+~~~~~~~~~~~~~~
+● Definition: 
+	- The entity is associated with a Hibernate session and is tracked for changes.
+● Characteristics:
+	- The entity has an identifier (primary key) assigned.
+	- Changes made to the entity are automatically synchronized with the database.
+● Example:
+	session.save(emp); // Now in Persistent state
+
+3. Detached:
+~~~~~~~~~~~
+● Definition: 
+	- The entity is no longer associated with a Hibernate session, but it still represents a record
+	  in the database.
+● Characteristics:
+	- The entity has an identifier and is in the database.
+	- Changes made to the entity will not be synchronized until it is reattached to a session.
+● Example:
+	session.close(); // emp is now detached
+
+4. Removed:
+~~~~~~~~~~~
+● Definition: 
+	- The entity is marked for deletion and will be removed from the database upon committing the 
+	  transaction.
+● Characteristics:
+	- The entity can be in a persistent state before being removed.
+	- Once the transaction is committed, the entity is deleted from the database.
+● Example:
+	session.delete(emp); // emp is now in Removed state
+	
+	
+Lifecycle Flow
+---------------
+1. Transient → Persistent:
+	- When the entity is saved using session.save() or session.persist().
+
+2. Persistent → Detached:
+	- When the session is closed using session.close(), or the entity is explicitly evicted.
+
+3. Persistent → Removed:
+	- When the entity is deleted using session.delete().
+
+4. Detached → Persistent:
+	- When a detached entity is reattached to a session using session.update() or session.merge().
+
+	
+	
+===================================================================================================	
+Quick Notes:
+------------
+● Transient: Newly created; not persisted.
+● Persistent: Managed by the session; changes tracked.
+● Detached: Not managed by any session; exists in the database.
+● Removed: Marked for deletion; will be deleted upon transaction commit.
+	
