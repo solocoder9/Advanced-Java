@@ -1,5 +1,5 @@
-Essential Hibernate Anotations
-------------------------------
+Essential Hibernate Anotations (JPA Annotations)
+------------------------------------------------
 1. Entity Mapping
 ~~~~~~~~~~~~~~~~~
 ● @Entity: Marks a class as an entity.
