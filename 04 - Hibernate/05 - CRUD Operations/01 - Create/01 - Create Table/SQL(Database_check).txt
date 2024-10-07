@@ -1,0 +1,11 @@
+mysql> DESC employee;
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| deptno    | int         | YES  |     | NULL    |                |
+| empid     | int         | NO   | PRI | NULL    | auto_increment |
+| hire_date | date        | YES  |     | NULL    |                |
+| sal       | double      | YES  |     | NULL    |                |
+| ename     | varchar(50) | YES  |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+5 rows in set (0.04 sec)
