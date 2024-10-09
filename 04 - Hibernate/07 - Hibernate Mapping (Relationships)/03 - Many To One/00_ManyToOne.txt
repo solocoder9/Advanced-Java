@@ -1,0 +1,15 @@
+Many-to-One Relationship
+-------------------------
+- A Many-to-One relationship means that multiple instances of one entity are associated 
+  with a single instance of another entity.
+- This type of relationship is common when multiple records in one table point to a 
+  single record in another table.
+- Examples:
+    Multiple students belonging to a single school.
+    Multiple orders placed by a single customer.
+
+Annotations
+~~~~~~~~~~~
+@ManyToOne: used on the "many" side of the relationship.
+@OneToMany: used on the "one" side, linking back to the "many" side.
+@JoinColumn: defines the foreign key column in the "many" side.
