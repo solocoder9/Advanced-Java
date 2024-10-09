@@ -1,0 +1,19 @@
+mysql> SELECT * FROM note;
++--------------------+---------+-------------+
+| details_details_id | note_id | noteTitle   |
++--------------------+---------+-------------+
+|                101 |       1 | First Note  |
+|                102 |       2 | Second Note |
+|                103 |       3 | Third Note  |
++--------------------+---------+-------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM details;
++------------+--------------------------------------+
+| details_id | noteDescription                      |
++------------+--------------------------------------+
+|        101 | This is the first note's details.    |
+|        102 | Details of the second note.          |
+|        103 | This note describes a third example. |
++------------+--------------------------------------+
+3 rows in set (0.00 sec)
