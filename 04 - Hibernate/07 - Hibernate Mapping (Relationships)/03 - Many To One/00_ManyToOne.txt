@@ -10,6 +10,11 @@ Many-to-One Relationship
 
 Annotations
 ~~~~~~~~~~~
-@ManyToOne: used on the "many" side of the relationship.
-@OneToMany: used on the "one" side, linking back to the "many" side.
-@JoinColumn: defines the foreign key column in the "many" side.
+● @ManyToOne: used on the "many" side of the relationship.
+● @OneToMany: used on the "one" side, linking back to the "many" side.
+● @JoinColumn: defines the foreign key column in the "many" side.
+
+Key Points
+~~~~~~~~~~
+● Unidirectional
+● Bidirectional

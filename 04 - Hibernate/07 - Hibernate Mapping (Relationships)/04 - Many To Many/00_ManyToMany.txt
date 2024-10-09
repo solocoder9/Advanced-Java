@@ -1,0 +1,18 @@
+Many-to-Many Relationship
+-------------------------
+- A Many-to-Many relationship means that multiple instances of one entity can be associated
+  with multiple instances of another entity.
+- This type of relationship is often modeled through a join table.
+- Examples:
+  - Students and courses (a student can enroll in multiple courses, and a course can have multiple students).
+  - Authors and books (an author can write multiple books, and a book can have multiple authors).
+
+Annotations
+~~~~~~~~~~~
+● @ManyToMany – used on both sides of the relationship.
+● @JoinTable – specifies the join table and the foreign key columns.
+
+Key Points
+~~~~~~~~~~
+● Unidirectional
+● Bidirectional

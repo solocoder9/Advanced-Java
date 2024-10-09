@@ -14,3 +14,9 @@ Annotations
 ● @ManyToOne: used on the "many" side, linking back to the "one" side.
 ● @JoinColumn: defines the foreign key column in the "many" side.
 ● @Cascade: used to define cascading operations for related entities (optional).
+
+Key Points
+~~~~~~~~~~
+● Unidirectional
+● Bidirectional
+● Cascading
