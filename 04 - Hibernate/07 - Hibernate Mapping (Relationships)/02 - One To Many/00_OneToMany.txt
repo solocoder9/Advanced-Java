@@ -1,0 +1,15 @@
+One-to-Many Relationship
+------------------------
+- A One-to-Many relationship means that one entity is associated with multiple instances 
+  of another entity.
+- This type of relationship is commonly seen in scenarios where a single instance can have
+  multiple counterparts.
+- Examples:
+    A teacher and their students.
+    A customer and their orders.
+
+Annotations
+~~~~~~~~~~~
+● @OneToMany: used on the "one" side of the relationship.
+● @JoinColumn: defines the foreign key column in the "many" side.
+● @Cascade: used to define cascading operations for related entities (optional).
