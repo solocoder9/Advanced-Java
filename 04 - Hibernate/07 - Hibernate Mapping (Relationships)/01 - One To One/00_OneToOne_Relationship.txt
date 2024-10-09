@@ -1,0 +1,20 @@
+One-to-One Relationship
+-----------------------
+- A One-to-One relationships means that one enity is associated with one other entity.
+- This type of relationship is commonly seen between entities where each instance has a 
+  unique counterpart.
+- Examples:
+    A person and their passport.
+    A person and their Adhaar card.
+
+Annotations:
+~~~~~~~~~~~~
+● @OneToOne – used on both sides (either bidirectional or unidirectional).
+● @JoinColumn – defines the foreign key column in a unidirectional relationship.
+● @MapsId – in some cases where the primary key is shared between the two entities.
+
+Key Points
+~~~~~~~~~~
+● Unidirectional: One side owns the relationship and uses @JoinColumn.
+● Bidirectional: Both sides are aware of the relationship (using mappedBy).
+● Cascading: Use CascadeType.ALL to save/delete related entities together.
