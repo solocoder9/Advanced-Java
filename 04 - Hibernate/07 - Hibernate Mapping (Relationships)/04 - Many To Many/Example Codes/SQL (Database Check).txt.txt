@@ -1,0 +1,27 @@
+mysql> SELECT * FROM student;
++------------+-------------+
+| student_id | studentName |
++------------+-------------+
+|          1 | John        |
+|          2 | Emma        |
++------------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM course;
++-----------+-------------+
+| course_id | courseName  |
++-----------+-------------+
+|       101 | Mathematics |
+|       102 | Science     |
++-----------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM course_student;
++-------------------+---------------------+
+| courses_course_id | students_student_id |
++-------------------+---------------------+
+|               101 |                   1 |
+|               101 |                   2 |
+|               102 |                   1 |
++-------------------+---------------------+
+3 rows in set (0.00 sec)
