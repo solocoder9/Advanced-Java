@@ -1,0 +1,20 @@
+Orphan Removal
+--------------
+- Orphan removal is a specific cascading operation that automatically deletes child 
+  entities when they are removed from the parent entity’s collection. 
+- This feature helps in maintaining database integrity and automatically handles 
+  orphaned records.
+
+Example:-
+~~~~~~~~~
+    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Employee> employees = new HashSet<>();
+
+    ● With orphanRemoval = true, if you remove an Employee from the employees collection
+      of a Department, that Employee will be deleted from the database automatically.
+
+
+Summery
+-------
+● Orphan Removal: Automatically deletes child entities that are no longer referenced 
+  by the parent entity.
