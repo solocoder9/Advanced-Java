@@ -12,8 +12,8 @@ Types of Cascading operations
 +-------------------+---------------------------------------------------------------+
 | Cascade Type      | Description                                                   |
 +-------------------+---------------------------------------------------------------+
-| ALL               | Applies all cascade operations (persist, merge, remove,      |
-|                   | refresh, detach).                                           |
+| ALL               | Applies all cascade operations (persist, merge, remove,       |
+|                   | refresh, detach).                                             |
 +-------------------+---------------------------------------------------------------+
 | PERSIST           | Cascade the persist operation to associated entities.         |
 +-------------------+---------------------------------------------------------------+
