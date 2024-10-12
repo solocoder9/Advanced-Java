@@ -1,0 +1,43 @@
+Cascading in Hibernate
+----------------------
+- Cascading in Hibernate refers to the mechanism that allows you to propagate certain 
+  operations (like save, update, delete, etc.) from a parent entity to its associated 
+  child entities automatically. 
+- This feature simplifies the management of relationships in an object-oriented way, 
+  ensuring that related entities are handled correctly without requiring explicit 
+  code for each operation.
+
+Types of Cascading operations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++-------------------+---------------------------------------------------------------+
+| Cascade Type      | Description                                                   |
++-------------------+---------------------------------------------------------------+
+| ALL               | Applies all cascade operations (persist, merge, remove,      |
+|                   | refresh, detach).                                           |
++-------------------+---------------------------------------------------------------+
+| PERSIST           | Cascade the persist operation to associated entities.         |
++-------------------+---------------------------------------------------------------+
+| MERGE             | Cascade the merge operation to associated entities.           |
++-------------------+---------------------------------------------------------------+
+| REMOVE            | Cascade the remove operation to associated entities.          |
++-------------------+---------------------------------------------------------------+
+| REFRESH           | Cascade the refresh operation to associated entities.         |
++-------------------+---------------------------------------------------------------+
+| DETACH            | Cascade the detach operation to associated entities.          |
++-------------------+---------------------------------------------------------------+
+| CLEAR             | Clear the associated entities.                                |
++-------------------+---------------------------------------------------------------+
+
+Example:-
+~~~~~~~~~
+- Consider a one-to-many relationship between Department and Employee entities. 
+- If you want to save a department along with its employees, you can use the 
+  CascadeType.PERSIST:
+
+
+Summery
+-------
+● Cascading: Allows operations on a parent entity to be automatically applied to its 
+  associated child entities.
+
+
