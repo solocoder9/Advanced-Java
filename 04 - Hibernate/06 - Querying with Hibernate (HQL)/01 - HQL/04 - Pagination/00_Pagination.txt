@@ -1,0 +1,26 @@
+Pagination in Hibernate
+-----------------------
+- Pagination is the process of dividing a large set of data into smaller, manageable 
+  parts (pages) to avoid loading all the records at once, which could lead to 
+  performance issues. 
+- Instead of loading all rows from a database, only a subset (or a single page) of rows 
+  is retrieved at a time.
+- Pagination is important in applications where the database might have millions of rows, 
+  and retrieving all of them at once could slow down the system.
+
+Advantages
+~~~~~~~~~~
+● Performance optimization
+● Better user experience
+● Efficient database querying
+
+Key Points
+~~~~~~~~~~
+- In Hibernate, pagination is implemented using the Query interface, specifically by setting:
+    1. First Result: The starting position of the first result (setFirstResult()).
+    2. Max Results: The maximum number of results per page (setMaxResults()). 
+
+Key Methods for Pagination
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+● setFirstResult(int startPosition): Specifies the starting row (zero-based index).
+● setMaxResults(int pageSize): Specifies the maximum number of records (page size) to retrieve.
