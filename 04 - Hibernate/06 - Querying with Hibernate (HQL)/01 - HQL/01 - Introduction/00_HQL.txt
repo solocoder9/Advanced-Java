@@ -1,0 +1,21 @@
+Hibernate Query Language (HQL)
+------------------------------
+- HQL is an object-oriented query language, similar to SQL but operates on entity objects
+  and their properties, not on database tables directly.
+- It is case-insensitive for keyword (SELECT, FROM), but class and property names are 
+  case-sensitive.
+
+Basic Syntax of HQL 
+~~~~~~~~~~~~~~~~~~~
+- HQL queries are written useing entity class names, not table names.
+- HQL supports SELECT, INSERT, UPDATE, and DELETE operations.
+- Example:
+    SELECT e FROM Employee e WHERE e.salary > :minSalary
+
+    ● Employee: Entity class.
+    ● e.salary: Class field, not the database column.
+    ● :minSalary: Parameterized input (named parameter).
+
+Common HQL Function
+~~~~~~~~~~~~~~~~~~~
+  AVG(), SUM(), COUNT(), MAX(), MIN().
