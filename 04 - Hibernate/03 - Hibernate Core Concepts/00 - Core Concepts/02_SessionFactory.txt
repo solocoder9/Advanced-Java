@@ -5,7 +5,7 @@ SessionFactory in Hibernate
 - It is configured once and can be reuse across the applications, managing the connection to
   the database and providing access to the underlying data model.
 
-Key Featurs:
+Key Features:
 ~~~~~~~~~~~~
 ● Thread-Safe:
     - Unlike Session, the SessionFactory is designed to be shared among multiple threads, 

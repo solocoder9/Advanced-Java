@@ -3,7 +3,7 @@ Transaction in Hibernate
 - A Transaction in Hibernate is a mechanism that ensures a sequence of operations are executed as a
   single unit or work.
 - It guarantees data integrity and follows the ACID properties(Atomicity, Consistency, Isolation, 
-  Durability), allowing changes to be commited or rolled back.
+  Durability), allowing changes to be committed or rolled back.
 
 Key Features:
 ~~~~~~~~~~~~~
