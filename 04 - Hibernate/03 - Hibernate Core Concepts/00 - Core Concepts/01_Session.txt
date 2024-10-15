@@ -2,7 +2,7 @@ Session in Hibernate
 --------------------
 - A Session in hibernate is a fundamental interface that provides a way to interact with 
   the database.
-- It acts as a gateway for performing CRUD (Create, Read, Updata, Delete) operations and 
+- It acts as a gateway for performing CRUD (Create, Read, Update, Delete) operations and 
   manages the persistence lifecycle of entity objects.
 - Each session is lightweight, not thread-safe, and should be opened and closes for each 
   request or transaction.
