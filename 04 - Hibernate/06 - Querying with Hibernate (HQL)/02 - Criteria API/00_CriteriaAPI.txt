@@ -1,0 +1,73 @@
+Criteria API
+------------
+- The Criteria API in Hibernate is a powerful, object-oriented way to create and execute
+  database queries.
+- Unlike HQL(Hibernate Query Language), which is string-based, the Criteria API allows 
+  developers to create queries in a more object-oriented manner, avoiding issues like 
+  syntax errors or incorrect parameter bindings.
+- This is especially useful when the query structure can very based on user input or 
+  other runtime factors.
+
+
+■ Key Features
+------------
+1. Type-Safe Queries:
+~~~~~~~~~~~~~~~~~~~~~
+- Since Criteria API uses Java methods, it ensures that queries are type-safe meaning errors
+  can be caught at compile time rather than runtime.
+
+2. Dynamic Query Generation:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Unlike HQL, which is static, Criteria API enables dynamic query construction, allowing 
+  conditions and joins to be added programmatically based on runtime decisions.
+
+3. Supports Complex Queries:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- It can handle complex queries, including those with conditions, sorting, grouping, and 
+  joins, in an easy-to-read format.
+
+4. Integration with Projection and Aggregations:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- Criteria API allows the use of projections (e.g., selecting only specific fields/columns)
+  and aggregation functions (like sum, avg, count) in queries.
+
+
+■ Key Components
+----------------
+● CriteriaBuilder: 
+    - This is used to construct different parts of the query (e.g., conditions, ordering).
+● CriteriaQuery: 
+    - Represents the actual query.
+● Root: 
+    - Represents the entity to be queried.
+● Predicate: 
+    - Used for filtering conditions (similar to the WHERE clause in SQL).
+● Order: 
+    - For sorting results (similar to ORDER BY in SQL).
+
+■ Example Use Cases:
+--------------------
+● Retrieving entities based on filters (where conditions)
+● Ordering results (sorting)
+● Applying pagination
+● Aggregating results (e.g., count, sum)
+
+
+■ Steps to Use Criteria API
+---------------------------
+1. Create a Session: 
+    - Use the Hibernate 'Session' object to initiate the query.
+
+2. Create a CriteriaBuilder: 
+    - This object is used to construct the different parts of the query.
+
+3. Create a CriteriaQuery: 
+    - This defines the query structure and can represent the entity class that the query 
+      will target.
+
+4. Set Conditions/Restrictions: 
+    - Use methods like equal(), greaterThan(), like(), etc., to define the query's conditions.
+
+5. Execute the Query: 
+    - Once the query is constructed, use session.createQuery() to execute it.
+
