@@ -1,4 +1,4 @@
-Essential Hibernate Anotations (JPA Annotations)
+Essential Hibernate Annotations (JPA Annotations)
 ------------------------------------------------
 1. Entity Mapping
 ~~~~~~~~~~~~~~~~~
