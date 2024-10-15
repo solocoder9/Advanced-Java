@@ -1,0 +1,23 @@
++-----------------------+------------------------------------------+---------------------------------------------+
+|                       |                Criteria API              |                     HQL                     |
++-----------------------+------------------------------------------+---------------------------------------------+
+| **Type**              | Programmatic API for dynamic queries     | SQL-like syntax for querying                |
++-----------------------+------------------------------------------+---------------------------------------------+
+| **Query Structure**   | Uses Java methods to build queries       | Uses string-based syntax for queries        |
++-----------------------+------------------------------------------+---------------------------------------------+
+| **Readability**       | More verbose; can be complex             | More concise and easier for SQL users       |
++-----------------------+------------------------------------------+---------------------------------------------+
+| **Flexibility**       | Flexible; build queries at runtime       | Less flexible; requires string manipulation |
++-----------------------+------------------------------------------+---------------------------------------------+
+| **Return Type**       | Returns entities or collections          | Can return entities, scalar values, or DTOs |
++-----------------------+------------------------------------------+---------------------------------------------+
+| **Compile-time Safety*| Offers compile-time checks; safer        | Errors caught at runtime due to strings     |
++-----------------------+------------------------------------------+---------------------------------------------+
+| **Joins**             | Uses `createAlias()` for joins           | Joins specified in SQL-like syntax          |
++-----------------------+------------------------------------------+---------------------------------------------+
+| **Grouping**          | Supports grouping using `setProjection()`| Uses `GROUP BY` clause                      |
++-----------------------+------------------------------------------+---------------------------------------------+
+| **Learning Curve**    | Steeper; requires understanding of API   | Easier for those familiar with SQL          |
++-----------------------+------------------------------------------+---------------------------------------------+
+| **Execution**         | Executes lazily, optimizing performance  | Executes immediately; may need optimization |
++-----------------------+------------------------------------------+---------------------------------------------+
