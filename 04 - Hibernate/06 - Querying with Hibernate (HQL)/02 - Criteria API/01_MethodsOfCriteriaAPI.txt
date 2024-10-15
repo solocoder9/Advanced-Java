@@ -1,0 +1,33 @@
++-------------------------------+-------------------------------------------------+------------------------------------------------------------------+
+|              Method           |                Description                      |                       Use Case                                   |
++-------------------------------+-------------------------------------------------+------------------------------------------------------------------+
+| CriteriaBuilder.createQuery() | Creates a CriteriaQuery object.                 | Used to start building a query on a specific entity.             |
++-------------------------------+-------------------------------------------------+------------------------------------------------------------------+
+| CriteriaQuery.from()          | Specifies the entity to be queried.             | Defines the root of the query (e.g., Employee.class).            |
++-------------------------------+-------------------------------------------------+------------------------------------------------------------------+
+| CriteriaBuilder.equal()       | Adds equality condition.                        | Fetch records where a column equals a specific value.            |
++-------------------------------+-------------------------------------------------+------------------------------------------------------------------+
+| CriteriaBuilder.greaterThan() | Adds a "greater than" condition.                | Retrieve records where a field is greater than a specific value. |
++-------------------------------+-------------------------------------------------+------------------------------------------------------------------+
+| CriteriaBuilder.lessThan()    | Adds a "less than" condition.                   | Retrieve records where a field is less than a specific value.    |
++-------------------------------+-------------------------------------------------+------------------------------------------------------------------+
+| CriteriaQuery.select()        | Specifies which fields or entities to retrieve. | Defines the data to be fetched from the query.                   |
++-------------------------------+-------------------------------------------------+------------------------------------------------------------------+
+| CriteriaBuilder.like()        | Adds a "LIKE" condition for pattern matching.   | For partial string matches, like `name LIKE 'A%'`.               |
++-------------------------------+-----------------------------------------------------------+--------------------------------------------------------+
+| CriteriaBuilder.and()         | Combines multiple conditions with logical AND.  | Apply multiple conditions together in a query.                   |
++-------------------------------+-------------------------------------------------+------------------------------------------------------------------+
+| CriteriaBuilder.or()          | Combines multiple conditions with logical OR.   | Apply either of the multiple conditions in a query.              |
++-------------------------------+-------------------------------------------------+------------------------------------------------------------------+
+| CriteriaQuery.where()         | Specifies the filtering conditions.             | Defines the `WHERE` clause to apply filters to the results.      |
++-------------------------------+-------------------------------------------------+------------------------------------------------------------------+
+| CriteriaBuilder.between()     | Adds a "BETWEEN" condition.                     | Fetch records where a field lies between two values.             |
++-------------------------------+-------------------------------------------------+------------------------------------------------------------------+
+| CriteriaQuery.orderBy()       | Defines sorting of the query results.           | Sort results in ascending or descending order.                   |
++-------------------------------+-------------------------------------------------+------------------------------------------------------------------+
+| Root.get()                    | Retrieves the value of a specific field/column. | Access the column to apply conditions, e.g., `root.get("name")`. |
++-------------------------------+-------------------------------------------------+------------------------------------------------------------------+
+| setFirstResult()              | Defines the starting position for result set.   | Used for pagination to skip a number of records.                 |
++-------------------------------+-------------------------------------------------+------------------------------------------------------------------+
+| setMaxResults()               | Limits the number of results retrieved.         | Controls the maximum results returned (for pagination).          |
++-------------------------------+-------------------------------------------------+------------------------------------------------------------------+
