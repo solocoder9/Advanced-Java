@@ -11,6 +11,7 @@ Advantages of Hibernate
 ~~~~~~~~~~~~~~~~~~~~~~~
 - Hibernate is open-source and light weight.
 - It eliminates the need for complex SQL queries.
+- Database independence.
 - Provides built-in transaction management.
 - Supports caching mechanisms for optimized performance.
 - Simplifies CRUD operations and reduces boilerplate code.
@@ -23,21 +24,26 @@ Disadvantages of Hibernate
 - Performance overhead due to ORM abstraction layer.
 
 
-
 ■ Core Concepts
 -------------
-1. ORM (Object-Relational Mapping)
+1. Framework
+~~~~~~~~~~~~
+- A framework is a structured platform that provides a foundation for developing software applications. 
+- It simplifies the process of building applications by providing reusable components, tools, and 
+  libraries that follow certain design patterns and best practices. 
+
+2. ORM (Object-Relational Mapping)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - ORM is a programming technique for converting data between incompatible type systems using object-
   oriented programming languages.
 - It maps Java classes to database tables and Java data types to SAL data types.
 
-2. JPA (Java Persistence API)
+3. JPA (Java Persistence API)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - JPA is a Java specification that provides certain functionality and standard to ORM tools.
 - The javax.persistence package contains the JPA classes and interfaces.
 
-3. Hibernate Architecture:
+4. Hibernate Architecture:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 	● Configuration Object:
 		- Represents the configuration file (hibernate.cfg.xml), which contains database and Hibernate 
@@ -53,27 +59,27 @@ Disadvantages of Hibernate
 	●  Query & Criteria: 
 		- Used for fetching data from the database. Supports both HQL (Hibernate Query Language) and SQL.
 
-4. Mapping:
+5. Mapping:
 ~~~~~~~~~~~
 ● Entity: A lightweight Java class annotated with @Entity that represents a table in the database.
 ● @Table: Specifies the table name associated with the entity.
 ● @Id: Denotes the primary key of the entity.
 ● @Column: Maps a class field to a column in the database table.
 
-5. Hibernate Annotations:
+6. Hibernate Annotations:
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 ● @Entity, @Table, @Id, @Column: Basic annotations for mapping.
 ● @OneToOne, @OneToMany, @ManyToOne, @ManyToMany: Define relationships between entities.
 ● @JoinColumn: Specifies the foreign key column.
 
-6. Hibernate Query Language (HQL):
+7. Hibernate Query Language (HQL):
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - HQL is an object-oriented query language similar to SQL but operates on persistent objects rather than
   tables.
 - Example: 
 	SELECT e FROM Employee e WHERE e.salary > 50000.
 
-7. Caching:
+8. Caching:
 ~~~~~~~~~~~
 ● First-Level Cache: 
 	- Associated with the Session object. 
