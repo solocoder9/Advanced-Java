@@ -1,0 +1,16 @@
+Hibernate: 
+    select
+        c1_0.category_id,
+        c1_0.categoryName,
+        p1_0.category_category_id,
+        p1_0.product_id,
+        p1_0.productName 
+    from
+        Category c1_0 
+    left join
+        Product p1_0 
+            on c1_0.category_id=p1_0.category_category_id 
+    where
+        c1_0.category_id=?
+Category ID: 1
+Category Name: Electronic Devices
