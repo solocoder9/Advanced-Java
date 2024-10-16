@@ -1,0 +1,48 @@
+Fetching using @Fetch Annotation
+--------------------------------
+- The @Fetch annotation in Hibernate is used to customize how related entities are fetched
+  from the database.
+- It provides an alternative to the default fetching strategies of EAGER and LAZY.
+
+■ Fetch Modes
+-------------
+1. FetchMode.JOIN:
+~~~~~~~~~~~~~~~~~~
+    - Uses SQL joins to fetch associated entities in a single query.
+    - Example:
+        @OneToMany
+        @Fetch(FetchMode.JOIN)
+        private Set<ChildEntity> children;
+
+2. FetchMode.SELECT:
+~~~~~~~~~~~~~~~~~~~~
+    - Loads associated entities with separate SQL queries.
+    - Example:
+        @OneToMany
+        @Fetch(FetchMode.SELECT)
+        private Set<ChildEntity> children;
+
+3. FetchMode.SUBSELECT:
+~~~~~~~~~~~~~~~~~~~~~~~
+    - Uses a subselect to load associated entities in a single query for multiple 
+      parent entities.
+    - Example:
+        @OneToMany
+        @Fetch(FetchMode.SUBSELECT)
+        private Set<ChildEntity> children;
+
+■ Use Cases
+-----------
+● JOIN: is preferred when performance is crucial, and you need all related entities at once.
+● SELECT: works well for large collections that are accessed conditionally.
+● SUBSELECT: is beneficial when dealing with one-to-many relationships involving shared 
+             child entities.
+
+
+
+Summary
+-------
+- The @Fetch annotation helps optimize how Hibernate retrieves related data, making your 
+  application faster and more efficient by tailoring fetching strategies to your specific 
+  use cases.
+
