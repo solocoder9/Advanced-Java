@@ -1,0 +1,57 @@
+Fetching Strategy in Hibernate
+------------------------------
+- A fetching strategy in Hibernate defines when and how related entities are loaded from
+  the database.
+- It can be eager, meaning associated data is loaded immediately with the main entity, or
+  lazy, where related data is fetched only when accessed.
+- Choosing the right strategy is crucial for optimizing performance and avoiding issues 
+  like loading unnecessary data or the N+1 select problem.
+
+
+1. Eager Fetching
+-----------------
+● Definition:
+    - In eager fetching, associated entities are loaded immediately with the main entity.
+● Use Case:
+    - It is suitable when you are sure that you will need the related entities every time 
+      the main entity is fetched.
+● Performance:
+    - Eager fetching can lead to performance issues when associated entities contain large
+      amounts of data or unnecessary relationships are fetched.
+● Example:
+    @OneToMany(fetch = FetchType.EAGER)
+    private Set<Order> orders;
+
+● Pros:
+    - Reduces the number of queries executed if related entities are always needed.
+    - Avoids the lazy initialization exception.
+● Cons:
+    - Can lead to over-fetching data that may not be required.
+    - Increases memory consumption when large datasets are involved.
+
+
+2. Lazy Fetching
+----------------
+● Definition:
+    - In lazy fetching, associated entities are loaded only when they are accessed for the 
+      first time (i.e., on-demand fetching).
+● Use Case:
+    - This strategy is ideal when the related data is large or not always required.
+● Performance:
+    - Lazy fetching optimizes performance when related entities are not needed immediately.
+    - However, it can cause the N+1 select problem, where one select query is run for the 
+      main entity, followed by individual queries for each associated entity.
+● Example:
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Customer customer;
+
+● Pros:
+    - Saves memory and database resources by not fetching unnecessary data.
+    - Suitable for collections or relationships where data is rarely accessed.
+● Cons:
+    - Can lead to the N+1 problem, where multiple queries are fired when accessing collections
+      or associations.
+    - May throw 'LazyInitializationException' if the session is closed before the associated 
+      entities are accessed.
+
+
