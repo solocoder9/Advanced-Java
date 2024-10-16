@@ -1,0 +1,15 @@
++-----------------+----------------------------------------------------+-----------------------------------------------------+
+|      Aspect     |                 Lazy Fetching                      |                Eager Fetching                       |
++-----------------+----------------------------------------------------+-----------------------------------------------------+
+| Definition      | Fetches related data only when accessed.          |Fetches related data immediately with the main entity.|
++-----------------+----------------------------------------------------+-----------------------------------------------------+
+| Performance     | Better for large datasets or rarely accessed data. |Can degrade performance by fetching unnecessary data.|
++-----------------+----------------------------------------------------+-----------------------------------------------------+
+| Query Execution | Multiple queries (N+1 problem).                    | Single or fewer queries using `JOIN`.               |
++-----------------+----------------------------------------------------+-----------------------------------------------------+
+| Use Case        | Suitable when related data is not always needed.   | Suitable when related data is always required.      |
++-----------------+----------------------------------------------------+-----------------------------------------------------+
+| Risk            | May throw `LazyInitializationException`.           | May lead to over-fetching unnecessary data.         |
++-----------------+----------------------------------------------------+-----------------------------------------------------+
+| Memory Usage    | Saves memory, loads data on demand.                | Higher memory usage, loads all related data upfront.|
++-----------------+----------------------------------------------------+-----------------------------------------------------+
