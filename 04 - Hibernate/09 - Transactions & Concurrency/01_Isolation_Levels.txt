@@ -1,0 +1,43 @@
+Isolation Levels in Hibernate
+-----------------------------
+- Isolation levels defines how database transactions are isolated from each other, ensuring
+  data integrity and consistency when multiple transaction run concurrently.
+- They prevent issues like dirty reads, not-repeatable reads, and phantom reads.
+- There are 4 standard isolation levels:
+        1. Read Uncommitted
+        2. Read Committed
+        3. Repeatable Read
+        4. Serializable
+
+1. Read Uncommitted:
+~~~~~~~~~~~~~~~~~~~~
+- Allow transactions to read uncommitted changes made by other transactions (dirty reads).
+- Least strict, but prone to data inconsistency.
+
+2. Read Committed:
+~~~~~~~~~~~~~~~~~~
+- A transaction can only read data committed by other transactions.
+- Prevents dirty reads but allows not-repeatable reads (data can change between reads).
+
+3. Repeatable Read:
+~~~~~~~~~~~~~~~~~~~
+- Ensures that if a transaction read data, it will see the same data throughout its execution
+  (prevents non-repeatable reads).
+
+4. Serializable:
+~~~~~~~~~~~~~~~~
+- The strictest isolation level, ensuring complete isolation.
+- Prevents dirty reads, non-repeatable reads, and phantom reads by locking rows or even tables.
+
+
+■ Key Concepts
+--------------
+● Dirty Read:
+    - Reading uncommitted changes; potential for invalid data.
+● Non-Repeatable Read: 
+    - Seeing different data on repeated reads of the same record due to committed changes by 
+      another transaction.
+● Phantom Read: 
+    - Seeing a different number of records (new or missing rows) when querying the same data set 
+      due to inserts/deletes by another transaction.
+
