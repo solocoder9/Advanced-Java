@@ -1,0 +1,21 @@
++----------------------------+-----------------------------------------------------+------------------------------------------------------+
+| Feature                    |                   Optimistic Locking                |                  Pessimistic Locking                 |
++----------------------------+-----------------------------------------------------+------------------------------------------------------+
+| Definition                 | Assumes conflicts are rare; no locking until commit.| Locks the resource to prevent access by other transactions.|
++----------------------------+-----------------------------------------------------+------------------------------------------------------+
+| Locking Mechanism          | No locks are placed until ready to commit.          | Locks are acquired at the beginning of the transaction.|
++----------------------------+-----------------------------------------------------+------------------------------------------------------+
+| Use Case                   | Suitable for low contention scenarios.              | Suitable for high contention scenarios.              |
++----------------------------+-----------------------------------------------------+------------------------------------------------------+
+| Performance                | Better performance with reduced locking overhead.   | May lead to decreased performance due to waiting for locks.|
++----------------------------+-----------------------------------------------------+------------------------------------------------------+
+| Concurrency Control        | Uses versioning/timestamps to check for changes.    | Uses database locks to prevent concurrent access.    |
++----------------------------+-----------------------------------------------------+------------------------------------------------------+
+| Rollback Scenario          | Rolls back on conflict; must retry.                 | Can wait for locks to be released, risking deadlocks.|
++----------------------------+-----------------------------------------------------+------------------------------------------------------+
+| Database Support           | Supported with version columns/timestamps.          | Supported with row-level or table-level locking.     |
++----------------------------+-----------------------------------------------------+------------------------------------------------------+
+| Implementation Complexity  | Simpler to implement, especially in frameworks.     | More complex due to lock management and deadlocks.   |
++----------------------------+-----------------------------------------------------+------------------------------------------------------+
+| Example Scenario           | Updating a user profile with low simultaneous edits.| Editing a bank account balance with high concurrent transactions.|
++----------------------------+-----------------------------------------------------+------------------------------------------------------+
