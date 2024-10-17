@@ -1,0 +1,43 @@
+Managing Transaction in Hibernate
+---------------------------------
+- In Hibernate, transaction management is crucial for ensuring data consistency and integrity.
+- Transactions group multiple database operations into a single unit of work, following the 
+  ACID principles (Atomicity, Consistency, Isolation, Durability).
+
+Steps to Manage Transaction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+● Open a Hibernate 'Session'.
+● Begin a transaction using 'session.beginTransaction()'.
+● Perform database operations (e.g., save, update, delete).
+● Commit the transaction with 'transaction.commit()' if successful.
+● Rollback the transaction with 'transaction.rollback()' in case of any exception.
+
+Rollback Mechanism
+~~~~~~~~~~~~~~~~~~
+- Hibernate allows rolling back the entire transaction if any operation fails.
+- Use 'transaction.rollback()' to revert all the changes made during the transaction.
+
+
+Example of Transaction management
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Session session = factory.openSession();
+    Transaction transaction = null;
+
+    try {
+        // Start a transaction
+        transaction = session.beginTransaction();
+
+        // Perform operations
+        Employee employee = new Employee("John Doe");
+        session.save(employee);
+
+        // Commit the transaction
+        transaction.commit();
+    } catch (Exception e) {
+        if (transaction != null) {
+            transaction.rollback();  // Rollback if any error occurs
+        }
+        e.printStackTrace();
+    } finally {
+        session.close();  // Always close the session
+    }
