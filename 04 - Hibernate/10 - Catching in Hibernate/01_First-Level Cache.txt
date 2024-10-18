@@ -1,0 +1,37 @@
+First-Level Cache
+-----------------
+- First-level cache is the default cache in Hibernate and is associated with the Hibernate 
+  'Session' object.
+- It exists for the duration of a Hibernate session and is used to store objects associated 
+  with that session.
+
+■ Key Points
+~~~~~~~~~~~~
+● Session-Scoped:
+    - Each session in Hibernate has its own cache, and this cache is not shared among different
+      sessions.
+● Automatic: 
+    - It's enabled by default and cannot be disabled.
+● Persistence Context:
+    - This cache acts as a persistence context, where Hibernate keeps track of all the objects 
+      it has already fetched from the database during the session.
+● Transaction-Scoped:
+    - The cache is cleared the end of the transaction when the session is closed.
+
+■ How it Works
+~~~~~~~~~~~~~~
+- When you load an object from the database, Hibernate checks the first-level cache (the current
+  session) before querying the database.
+- If the object is already in the cache, it's returned from there, avoiding a database query.
+
+■ Example:- 
+~~~~~~~~~~~
+    Session session = factory.openSession();
+    Transaction tx = session.beginTransaction();
+
+    // Fetching the same entity multiple times in the same session
+    Student student1 = session.get(Student.class, 101); // Query executed
+    Student student2 = session.get(Student.class, 101); // No query, fetched from cache
+
+    tx.commit();
+    session.close();
