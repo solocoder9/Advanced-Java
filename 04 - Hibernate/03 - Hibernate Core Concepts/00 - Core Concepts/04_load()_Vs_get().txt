@@ -1,0 +1,23 @@
++-------------------------+-------------------------------------------+-----------------------------------------+
+|          Feature        |                 load()                    |                  get()                  |
++-------------------------+-------------------------------------------+-----------------------------------------+
+| Return Type             | Returns a proxy object.                   | Returns the actual object.              |
++-------------------------+-------------------------------------------+-----------------------------------------+
+| Query Execution         | Delays the query until the object is      | Executes the query immediately.         |
+|                         | accessed (lazy loading).                  |                                         |
++-------------------------+-------------------------------------------+-----------------------------------------+
+| When Object Not Found   | Throws an ObjectNotFoundException when    | Returns null if the object is not found.|
+|                         | accessed.                                 |                                         |
++-------------------------+-------------------------------------------+-----------------------------------------+
+| Use Case                | Use when you're sure the object exists    | Use when you're unsure if the object    |
+|                         | and want to load it lazily.               | exists or need it immediately.          |
++-------------------------+-------------------------------------------+-----------------------------------------+
+| Performance Impact      | Better performance with lazy loading, as  | Immediate fetch, which can be slower    |
+|                         | the object is not fetched until needed.   | if not needed right away.               |
++-------------------------+-------------------------------------------+-----------------------------------------+
+| Behavior for Non-       | Returns a proxy object that may later     | Directly returns null if the object     |
+| existing ID             | throw an exception if accessed.           | does not exist.                         |
++-------------------------+-------------------------------------------+-----------------------------------------+
+| Session Management      | The object may remain uninitialized until | The object is fully initialized when    |
+|                         | its properties are accessed.              | fetched.                                |
++-------------------------+-------------------------------------------+-----------------------------------------+
