@@ -1,0 +1,33 @@
+Query Cache
+------------
+- The query cache is used to cache the results of Hibernate queries. 
+- It’s independent of the second-level cache and is useful for caching the actual results 
+  of queries.
+
+■ Key Points:
+~~~~~~~~~~~~~
+● Works with Second-Level Cache: 
+    - The query cache is not a standalone cache; it relies on the second-level cache for caching
+      the entities themselves.
+● Caching Query Results: 
+    - It stores the results of a query (typically a list of IDs) so that repeated queries don’t 
+      have to hit the database.
+● Not Enabled by Default: 
+    - You need to explicitly enable query caching in Hibernate configuration.
+
+■ Configuration: 
+~~~~~~~~~~~~~~~~
+- To enable the query cache, you need to configure it in your 'hibernate.cfg.xml':
+    <property name="hibernate.cache.use_query_cache">true</property>
+    <property name="hibernate.cache.use_second_level_cache">true</property>
+
+■ Example:- 
+~~~~~~~~~~~
+    Session session = factory.openSession();
+
+    // Enable query cache
+    List<Student> students = session.createQuery("from Student")
+        .setCacheable(true)
+        .list();
+
+    session.close();
