@@ -1,0 +1,39 @@
+Hibernate Caching
+-----------------
+- Caching in Hibernate is a mechanism that helps improve performance by reducing the number
+  of database queries executed for the same set of data.
+- Caching allows Hibernate to store frequently accessed objects in memory so that repeated 
+  requests for the same object can be served without hitting the database.
+- Hibernate offers two levels of caching: 
+        1. First-Level Cache (Session cache)
+        2. Second-Level Cache 
+
+
+1. First-Level Cache
+~~~~~~~~~~~~~~~~~~~~
+- First-level cache is the default cache in Hibernate and is associated with the Hibernate 
+  'Session' object.
+- It exists for the duration of a Hibernate session and is used to store objects associated 
+  with that session.
+
+2. Second-Level Cache
+~~~~~~~~~~~~~~~~~~~~~
+- The second-level cache is an optional cache, which is associated with the 'SessionFactory' 
+  object and can be shared across sessions.
+- Unlike the first-level cache, which is session-scoped, the second-level cache is 
+  application scoped.
+
+3. Query Cache
+~~~~~~~~~~~~~~
+- The query cache is used to cache the results of Hibernate queries.
+- It dependent of the second-level cache and is useful for caching the actual results of queries.
+
+
+■ Cache Providers
+~~~~~~~~~~~~~~~~~
+- Hibernate doesn’t implement its own second-level cache but integrates with several cache providers. 
+- Some popular cache providers are:
+    ● EHCache: A widely used cache provider in Hibernate applications. It’s simple and provides 
+               good performance for most use cases.
+    ● Infinispan: A more advanced cache provider suitable for large-scale distributed applications.
+    ● Hazelcast: A distributed cache that can work across multiple JVMs and servers.
