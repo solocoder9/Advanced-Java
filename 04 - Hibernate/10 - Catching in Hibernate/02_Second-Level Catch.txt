@@ -1,0 +1,64 @@
+Second-Level Cache
+---------------------
+- The second-level cache is an optional cache, which is associated with the 'SessionFactory' 
+  object and can be shared across sessions.
+- Unlike the first-level cache, which is session-scoped, the second-level cache is 
+  application scoped.
+
+■ Key Points
+~~~~~~~~~~~~
+● SessionFactory-Scoped: 
+    - It's associated with the 'SessionFactory', meaning objects stored in this cache are 
+      available to all sessions created bye the same SessionFactory.
+● Optional:
+    - You need to explicitly enable the second-level cache in Hibernate configuration.
+● Read-Write or Read-Only:
+    - You can configure the second-level cache as read-only or read-write depending on the 
+      requirements.
+● Cache Providers:
+    - Hibernate supports various che providers (e.g., EHCache, Infinispan, Hazelcast) to manage
+      the second-level cache.
+
+■ Cache Concurrency Strategies:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+● Read-Only: Used when data does not change (ideal for reference data).
+● Read-Write: Allows both reading and writing but ensures consistency using versioning.
+● Non-Strict Read-Write: Doesn’t guarantee strong consistency but offers better performance.
+● Transactional: Integrates with JTA for transactional caches (used in clustered environments).
+
+• Eviction: You can evict second-level cache entities either manually or automatically after 
+            some time, based on the cache provider’s settings.
+
+■ Configuration:
+~~~~~~~~~~~~~~~~
+    ● To enable the second-level cache, you need to add the following proerties in your 
+      'hibernate.cfg.xml' file.
+
+    <property name="hibernate.cache.use_second_level_cache">true</property>
+    <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+    <property name="hibernate.cache.provider_class">net.sf.ehcache.hibernate.EhCacheProvider</property>
+
+    ● Entity-Level Cache Configuration:
+        @Entity
+        @Cacheable
+        @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+        public class Student {
+            // entity fields
+        }
+
+■ How It Works:
+~~~~~~~~~~~~~~~
+- When a session tries to fetch an entity, Hibernate first checks the second-level cache. If the 
+  entity is found, it's returned from the cache, skipping the database.
+- If the entity is not found in the second-level cache, Hibernate will query the database and store 
+  the result in the cache for the future use.
+
+■ Example:- 
+~~~~~~~~~~~
+    Session session1 = factory.openSession();
+    Student student1 = session1.get(Student.class, 101); // Query executed, result cached
+    session1.close();
+
+    Session session2 = factory.openSession();
+    Student student2 = session2.get(Student.class, 101); // No query, fetched from second-level cache
+    session2.close();
