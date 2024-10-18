@@ -1,0 +1,27 @@
++-------------------------+-------------------------------------------+-----------------------------------------+
+|          Feature        |                   HQL                     |                   SQL                   |
++-------------------------+-------------------------------------------+-----------------------------------------+
+| Language Type           | Object-oriented query language.           | Standard query language for databases.  |
++-------------------------+-------------------------------------------+-----------------------------------------+
+| Syntax                  | Similar to SQL but uses entity names.     | Uses table and column names directly.   |
++-------------------------+-------------------------------------------+-----------------------------------------+
+| Querying                | Queries are based on the entity model.    | Queries are based on the database schema.|
++-------------------------+-------------------------------------------+-----------------------------------------+
+| Joins                   | Supports polymorphic queries and entity   | Supports various types of joins, including|
+|                         | relationships directly.                   | inner, outer, and cross joins.          |
++-------------------------+-------------------------------------------+-----------------------------------------+
+| Result Type             | Returns entity objects or collections.    | Returns rows of data.                   |
++-------------------------+-------------------------------------------+-----------------------------------------+
+| Database Independence   | Abstracts the database layer; can work    | Database-specific; syntax can vary      |
+|                         | with multiple databases.                  | between different SQL implementations.  |
++-------------------------+-------------------------------------------+-----------------------------------------+
+| Parameter Binding       | Supports named parameters and positional  | Supports positional parameters, but less|
+|                         | parameters for better readability.        | flexible with named parameters.         |
++-------------------------+-------------------------------------------+-----------------------------------------+
+| Pagination              | Provides built-in support for pagination. | Pagination often requires additional logic.|
++-------------------------+-------------------------------------------+-----------------------------------------+
+| Performance             | May be less efficient for complex queries.| Can be optimized for specific databases.|
++-------------------------+-------------------------------------------+-----------------------------------------+
+| DML Operations          | Allows HQL for updates and deletes using  | Allows standard DML operations (INSERT, |
+|                         | entities.                                 | UPDATE, DELETE).                        |
++-------------------------+-------------------------------------------+-----------------------------------------+
