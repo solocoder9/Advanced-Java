@@ -1,0 +1,61 @@
+Logging and Debugging Hibernate Queries
+----------------------------------------
+1. Importance of Logging
+------------------------
+● Trace SQL Queries: Understand interactions with the database.
+● Monitor Performance: Identify slow or inefficient queries.
+● Debugging: Diagnose issues quickly.
+
+
+2. Configuring Hibernate Logging
+---------------------------------
+● Using Log4j:
+~~~~~~~~~~~~~~
+    1. Add dependency to pom.xml:
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+    2. Create log4j.properties:
+        log4j.rootLogger=DEBUG, console
+        log4j.logger.org.hibernate.SQL=DEBUG
+
+
+● Using SLF4J:
+~~~~~~~~~~~~~~
+    1. Add dependencies:
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.30</version>
+        </dependency>
+
+    2. Create logback.xml:
+        <configuration>
+            <logger name="org.hibernate.SQL" level="DEBUG"/>
+            <root level="DEBUG">
+                <appender-ref ref="STDOUT"/>
+            </root>
+        </configuration>
+
+
+3. Logging SQL Queries
+----------------------
+- Enables viewing of SQL statements and parameters for debugging.
+
+
+4. Debugging Strategies
+------------------------
+● Enable Hibernate Statistics:
+    sessionFactory.getStatistics().setStatisticsEnabled(true);
+
+● Analyze Performance: Use statistics to assess query performance.
+
+
+Best Practices
+--------------
+Log Levels: Use appropriate logging levels to avoid excessive output.
+Sensitive Data: Avoid logging sensitive information.
+Regular Review: Continuously monitor logs for issues.
