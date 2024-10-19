@@ -1,6 +1,6 @@
 One-to-One Relationship
 -----------------------
-- A One-to-One relationships means that one enity is associated with one other entity.
+- A One-to-One relationships means that one entity is associated with one other entity.
 - This type of relationship is commonly seen between entities where each instance has a 
   unique counterpart.
 - Examples:
