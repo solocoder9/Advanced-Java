@@ -1,0 +1,53 @@
+Handling Exceptions in Hibernate
+--------------------------------
+- Hibernate provides a robust exception handling mechanism to deal with various issues
+  that can arise during database interactions.
+- Understanding how to handle these exceptions effectively is crucial for maintaining 
+  application stability and providing meaningful feedback to user.
+
+■ Types of Hibernate Exceptions
+-------------------------------
+● HibernateException:
+~~~~~~~~~~~~~~~~~~~~~
+- HibernateException is the base class for all the exception thrown by Hibernate.
+- It indicates a general error in the Hibernate framework.
+
+● Specific Exceptions
+~~~~~~~~~~~~~~~~~~~~~
+○ MappingException: 
+    - Occurs due to issues with entity mappings.
+○ QueryException: 
+    - Thrown when there are problems with HQL or criteria queries.
+○ ConstraintViolationException: 
+    - Raised when a database constraint (like unique or foreign key) is violated.
+○ StaleObjectStateException: 
+    - Indicates that an object has been modified concurrently, causing versioning issues.
+○ TransactionException: 
+    - Occurs when there is a problem with transaction management.
+
+
+Handling Exceptions in Hibernate using try-catch blocks:
+--------------------------------------------------------
+Example:-
+    try {
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+    
+        // Perform some database operations
+        MyEntity entity = new MyEntity();
+        session.save(entity);
+    
+        transaction.commit(); // Commit the transaction
+    } catch (HibernateException e) {
+        // Handle Hibernate-specific exceptions
+        if (transaction != null) {
+            transaction.rollback(); // Rollback in case of error
+        }
+        System.err.println("Error occurred: " + e.getMessage());
+        e.printStackTrace();
+    } finally {
+        // Close session to free resources
+        if (session != null) {
+            session.close();
+        }
+    }
