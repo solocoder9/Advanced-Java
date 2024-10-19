@@ -7,7 +7,7 @@ Hibernate Query Language (HQL)
 
 Basic Syntax of HQL 
 ~~~~~~~~~~~~~~~~~~~
-- HQL queries are written useing entity class names, not table names.
+- HQL queries are written using entity class names, not table names.
 - HQL supports SELECT, INSERT, UPDATE, and DELETE operations.
 - Example:
     SELECT e FROM Employee e WHERE e.salary > :minSalary
