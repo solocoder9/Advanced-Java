@@ -6,7 +6,7 @@ JavaServer Pages
 - This This approach helps separate the presentation layer from business logic, simplifying 
   web development and maintenance.
 - In simple words, JSP is the part of the Java EE(Enterprise Edition) platform and is designed 
-  to simplify the creation of web applications by separating the user interface from businness
+  to simplify the creation of web applications by separating the user interface from business
   logic.
  
 Advantages
@@ -20,7 +20,7 @@ How JSP Works
 ~~~~~~~~~~~~~
 1> Request processing:
 	- When a user requests a JSP page, the server checks if the JSP page has been compiled into 
-	  a servet.
+	  a servlet.
 	- If not, the server compiles the JSP page into a servet(a Java class) and then loads and 
 	  execute this servlet.
 	  
