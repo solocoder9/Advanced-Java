@@ -26,7 +26,7 @@ How JSP Works
 	  
 2> Servlet Execution:
 	- The compiled servlet process the request and generates the HTML response.
-	- This servlet code handles dynamic content generation and interact with other serever-side
+	- This servlet code handles dynamic content generation and interact with other server-side
 	  components if necessary.
 	  
 3> Response Delivery:
