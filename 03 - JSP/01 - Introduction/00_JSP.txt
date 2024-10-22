@@ -21,7 +21,7 @@ How JSP Works
 1> Request processing:
 	- When a user requests a JSP page, the server checks if the JSP page has been compiled into 
 	  a servlet.
-	- If not, the server compiles the JSP page into a servet(a Java class) and then loads and 
+	- If not, the server compiles the JSP page into a servlet(a Java class) and then loads and 
 	  execute this servlet.
 	  
 2> Servlet Execution:
