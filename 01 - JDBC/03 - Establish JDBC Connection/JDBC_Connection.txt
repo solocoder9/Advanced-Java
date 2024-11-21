@@ -65,7 +65,7 @@ Step-3> Create Statement
 
 Step-4> Execute queries
 ~~~~~~~~~~~~~~~~~~~~~~~
-- Use the 'executeQuery()' or 'excuteUpdate()' methods of the 'Statement' object to execute 
+- Use the 'executeQuery()' or 'executeUpdate()' methods of the 'Statement' object to execute 
   SQL queries against the database and retrieve results.
 - Example:
     // For SELECT queries
