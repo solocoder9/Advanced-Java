@@ -1,6 +1,6 @@
 JDBC Driver
 -----------
-- A JDBC driver is a software compnent that enables Java application to interact
+- A JDBC driver is a software component that enables Java application to interact
   with databases.
 - It translates Java calls to database-specific calls, Thus allowing Java programs
   to exicute SQL queries and retrive result.
