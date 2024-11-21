@@ -2,8 +2,8 @@
 - JDBC stands for Java Database Connectivity.
 - It is a Java API(Application Programming Interface) that allows Java programs to 
   access and manipulate data stored in databases, enabling developers to execute 
-  SQL queries, ritrieve results, and perform database operations programmatically.
-- In essens, JDBC acts as a bridge between Java applications and various database
+  SQL queries, retrieve results, and perform database operations programmatically.
+- In essence, JDBC acts as a bridge between Java applications and various database
   management systems, facilitating seamless interaction and data exchange.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -12,8 +12,8 @@
 - JDBC is a crucial component for Java applications that interact with relational 
   databases.
 - It provides a standardized, efficient, and easy-to-use API for database operations,
-  ensuring that applications are portable, scalabel, and maintainable.
-- Wheter building small web applications or large enterprise systems, JDBC remains a
+  ensuring that applications are portable, scalable, and maintainable.
+- Whether building small web applications or large enterprise systems, JDBC remains a
   foundational technology for database connectivity in the Java ecosystem.
 
 Advantages
@@ -22,18 +22,18 @@ Advantages
 - JDBC allows Java applications to work with different databases without altering
   the codebase.
 2> Security:
-- It offeres suceure access to databases through authentication and authorization 
+- It offers secure access to databases through authentication and authorization 
   mechanisms.
 3> Performance:
-- JDBC optimizes database operations for efficient data retrival and manipulation.
+- JDBC optimizes database operations for efficient data retrieval and manipulation.
 4> Integration:
-- It supports large datasets and high trasnaction volumes, making it suitable for
+- It supports large datasets and high transaction volumes, making it suitable for
   enterprise-level applications.
 5> Integration:
-- JDBC seamlessly intergrates with other Jva technologies and frameworks, enhancing 
-  application development capabilityes. 
+- JDBC seamlessly integrates with other Jva technologies and frameworks, enhancing 
+  application development capabilities. 
 6> Flexibility:
-- Developers can impliment various database operations like querying, updating, and 
+- Developers can implement various database operations like querying, updating, and 
   deleting data with ease.
 
 Benefits
@@ -69,8 +69,8 @@ Benefits
     4> Connection
     5> Statement
         - PreparedStatement
-        - CollabeStatement
+        - CallableStatement
     6> ResultSet
         - ResultSetMetadata
         - DatabaseMetadata
-    7> SQLExeception
+    7> SQLException
