@@ -7,7 +7,7 @@ Establish JDBC Connection
         Step-3> Create Statement
         Step-4> Execute SQL queries or SQL statements
         Step-5> Process the result(optional)
-        Step-6> Close costly resourses / Close connection
+        Step-6> Close costly recourses / Close connection
 
 
 Step-1> Load & Register Driver
