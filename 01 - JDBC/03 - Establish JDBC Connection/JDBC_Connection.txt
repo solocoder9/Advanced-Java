@@ -19,7 +19,7 @@ Step-1> Load & Register Driver
         2> Using 'DriverManager.registerDriver()' method
 
 1> Using 'Class.forName()' method:
-- This is most common approacho.
+- This is most common approach.
 - Class.forName() method call the JDBC driver dynamically at runtime.
 - It is a static method present in java.lang package.
 - If the specified class name is not found it throws a 'ClassNotFoundException'.
@@ -28,7 +28,7 @@ Step-1> Load & Register Driver
 
 2> Using 'DriverManager.registerDriver()' method:
 - DriverManager is a java inbuilt class with a static member 'register'.
-- Hence, we call the constructor or the Driver class at complile time.
+- Hence, we call the constructor or the Driver class at compile time.
 - Example:
     DriverManager.registerDriver(new create.jdbc.driver.OracleDatabase)
                     or
@@ -48,9 +48,9 @@ Step-2> Establish Connection
         1> getConnection(String url)
         2> getConnection(String url, properties info)
         3> getConnection(String url, String user, String password)
-- The getConnection() method throws as 'SQLException' because it indicates taht there 
+- The getConnection() method throws as 'SQLException' because it indicates that there 
   was a problem accessing the database. This could be various reasons such as- invalid url,
-  incorrect credentials, database server issues, network problems, configuration erros.
+  incorrect credentials, database server issues, network problems, configuration errors.
 - Example:
     Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbname", "username", "password");
 
@@ -58,7 +58,7 @@ Step-2> Establish Connection
 Step-3> Create Statement
 ~~~~~~~~~~~~~~~~~~~~~~~~
 - Use 'createStatement()' method of 'Connection' interface to create a 'Statement' object.
-- This 'Statement' object allows to send SQL queries to the database and retrive the result.
+- This 'Statement' object allows to send SQL queries to the database and retrieve the result.
 - Example:
     Statement statement = connection.createStatement();
 
@@ -66,7 +66,7 @@ Step-3> Create Statement
 Step-4> Execute queries
 ~~~~~~~~~~~~~~~~~~~~~~~
 - Use the 'executeQuery()' or 'excuteUpdate()' methods of the 'Statement' object to execute 
-  SQL queries against the database and retrive results.
+  SQL queries against the database and retrieve results.
 - Example:
     // For SELECT queries
     ResultSet resultSet = statement.executeQuery("SELECT * FROM tablename");
@@ -77,7 +77,7 @@ Step-4> Execute queries
 
 Step-5> Process the Result
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Process the 'ResultSet' object to retrive the data form the executed query.
+- Process the 'ResultSet' object to retrieve the data form the executed query.
 - Use 'ResultSet' methods like 'next()', 'getString()', 'getInt()', etc to iterate over the
   result set and access the retrieved data.
 - Example: 
@@ -94,7 +94,7 @@ Step-6> Close Connection
 - After completing database operations, close the resources such as 'ResultSet', 'Statement', and  
   'Connection' objects.
 - Use 'close()' method of 'Connection' interface to close the connection or close the resources.
-- This releases database and system resources, preventing memory leads and efficent resource utilization.
+- This releases database and system resources, preventing memory leads and efficient resource utilization.
 - Example:
     // Close the ResultSet, Statement, and Connection
     resultSet.close();
