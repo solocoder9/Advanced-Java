@@ -4,7 +4,7 @@ Servlet Lifecycle
   until it is destroyed by the server.
 - Understand this is crucial for developing robust Java web application.
 
-Serlet Lifecycle Stages
+Servlet Lifecycle Stages
 ~~~~~~~~~~~~~~~~~~~~~~~
 1> Loading and Instantiation:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -21,7 +21,7 @@ Serlet Lifecycle Stages
 	- After the servlet instance is created, the container calls the 'init()' method.
 	
 	● Purpose: 
-	- The 'init()' method is used to perfom any servlet-specific initialization, such as setting up database
+	- The 'init()' method is used to perform any servlet-specific initialization, such as setting up database
 	  connections or reading configuration settings.
 	● Details:
 	- The 'init()' method is called only once during the lifecycle of the servlet.
