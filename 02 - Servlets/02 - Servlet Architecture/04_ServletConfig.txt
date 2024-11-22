@@ -3,7 +3,7 @@ ServletConfig
 - ServletConfig is an object created by the servlet container for each servlet.
 - It contains configurations information provided in the web.xml file(deployment descriptor) and is
   used to pass initialization parameters to the servlet.
-- It is specific to each servlet and provides information to that particular servlet at rurntime.
+- It is specific to each servlet and provides information to that particular servlet at runtime.
 
 Methods of ServletConfig
 ~~~~~~~~~~~~~~~~~~~~~~~~
