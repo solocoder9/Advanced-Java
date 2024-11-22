@@ -39,7 +39,7 @@ Type-2: Native-API Driver(Partial Java Driver)
 
 Advantages:
 - Performance is better that Type-1 since it reduce ODBC overhead.
-- Can take advantage of database-spefific features provided by native libraries.
+- Can take advantage of database-specific features provided by native libraries.
 
 Disadvantages:
 - Requres native library installation on the client, making it less prtable.
