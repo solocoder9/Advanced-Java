@@ -42,7 +42,7 @@ Advantages:
 - Can take advantage of database-specific features provided by native libraries.
 
 Disadvantages:
-- Requires native library installation on the client, making it less prtable.
+- Requires native library installation on the client, making it less portable.
 - Each database requires a specific Type-2 driver.
 
 Example Usage:
