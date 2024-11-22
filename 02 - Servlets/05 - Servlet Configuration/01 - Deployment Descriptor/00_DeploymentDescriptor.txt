@@ -1,7 +1,7 @@
 Deployment Descriptor
 ---------------------
 - A deployment descriptor is a XML file used in Java EE(Enterprise Edition) applications to configure
-  various aspects of the appllication's deployment and runtime behavior.
+  various aspects of the application's deployment and runtime behavior.
 - The primary deployment descriptor in a Java EE web application is web.xml, which is located in the 
   WEB-INF directory of the application.
 - The deployment descriptor provides metadata that informs the applications server (like Apache Tomcat)
