@@ -1,6 +1,6 @@
 RequestDispatcher
 -----------------
-- RequestDispatcher is an interface in the Java Servlet API that allow a sevlet to forward a request
+- RequestDispatcher is an interface in the Java Servlet API that allow a servlet to forward a request
   to another resource(like another servlet, JSP, HTML page) or to include the content of another 
   resource in the response.
 - It is used to request delegation and resource inclusion within the same server context.
