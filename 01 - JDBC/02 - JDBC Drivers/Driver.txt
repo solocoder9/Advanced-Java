@@ -18,7 +18,7 @@ Type-1: JDBC-ODBC Bridge Driver
 - It requires an ODBC driver to be installed on the client machine.
 
 Advantages:
-- Allow acces to almost any database since ODBC is widely supported.
+- Allow access to almost any database since ODBC is widely supported.
 - Can be useful fo testing purposes when no other driver is available.
 
 Disadvantages:
