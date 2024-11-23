@@ -1,6 +1,6 @@
 Character Large Object(CLOB)
 ----------------------------
-- Character Large Object(CLOB) is a datatype iused for storing large amounts of text data.
+- Character Large Object(CLOB) is a datatype used for storing large amounts of text data.
 - It allows the storage of text data that can be several gigabytes in size.
 - CLOB is typically used for holding text documents, such as articles, reports, or any large
   text-based data.
