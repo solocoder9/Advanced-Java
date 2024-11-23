@@ -1,6 +1,6 @@
 Binary Large Object(BLOB)
 -------------------------
 - Binary Large Object(BLOB) in JDBC is a data type used for storing binary data.
-- It is commonly used to sotre such as images, audio, video, and other multimedia objects
+- It is commonly used to store such as images, audio, video, and other multimedia objects
   in a database.
 - BLOBs allows databases to handle amounts of binary data efficiently.
