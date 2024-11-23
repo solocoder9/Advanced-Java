@@ -1,7 +1,7 @@
 ResultSetMetaData
 -----------------
 - ResultSetMetaData is an interface in JDBC that provides metadata about the columns in
-  a 'ResultSet', including the colun names, types, sizes, and other properties.
+  a 'ResultSet', including the column names, types, sizes, and other properties.
 - It allows you to programmatically access and analyze the structure of the result set
   obtained from a database query, facilitating dynamic handling and processing of query 
   results.
