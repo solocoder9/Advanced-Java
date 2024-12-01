@@ -33,7 +33,7 @@ DriverManager
 	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb");
 	
 
-3> getConnection(String url, String username, String passoword)
+3> getConnection(String url, String username, String password)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Use to establish a connection to the given database URL using username and password.
 - Example:
