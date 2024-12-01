@@ -4,7 +4,7 @@ HttpServletRequest
   request.
 - It allows servlets to access information about the request made by a client, including request 
   parameter, headers, attributes, and more.
-- The purpose of HttpServletReques is to encapsulate the data send by a client (usually a web browser)
+- The purpose of HttpServletRequest is to encapsulate the data send by a client (usually a web browser)
   to a server. It provides a way for servlets to retrieve and process this data to generate an 
   appropriate response
   
