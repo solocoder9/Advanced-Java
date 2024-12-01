@@ -1,9 +1,9 @@
 JSP Implicit objects
 --------------------
-- In JSP, implicit objects are pre-defined objects that can be accessed directly without needing
-  ecplicit declaration.
-- These objects are automatically available to the JSP page, offering access to various elements
-  of the request, response, and session.
+- In JSP, implicit objects are pre-defined objects that can be accessed directly without
+  the need for explicit declaration.
+- These objects are automatically available to the JSP page, offering access to various 
+  elements of the request, response, and session.
 - There are 9 JSP implicit objects:
         1. request
         2. response
