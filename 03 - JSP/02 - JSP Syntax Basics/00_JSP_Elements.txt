@@ -2,7 +2,7 @@ JSP Tags/Elements
 -----------------
 - In JSP, tags are specific elements that are used to define the structure and behavior of the JSP page.
 - They are typically placed at the top of the JSP page and do not generate any output.
-- There are three primary catagories of JSP tags:-
+- There are three primary categories of JSP tags:-
 		1> Scripting Tags
 			● Declaration Tags (<%! %>)
 			● Scriptlet Tags (<% %>)
