@@ -53,7 +53,7 @@ Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:x
 Type-3: Network Protocol Driver(Fully Java Driver)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - The Type-3 driver uses a three-tier approach where JDBC calls are sent to a middle-tier 
-  server(application server), wheich tehn translates these calls to database-specific calls.
+  server(application server), which then ktranslates these calls to database-specific calls.
 - The middle-tier server handles the communication with the database.
 
 Advantages:
