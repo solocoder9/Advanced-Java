@@ -30,7 +30,7 @@ Advantages
 - It supports large datasets and high transaction volumes, making it suitable for
   enterprise-level applications.
 5> Integration:
-- JDBC seamlessly integrates with other Jva technologies and frameworks, enhancing 
+- JDBC seamlessly integrates with other Java technologies and frameworks, enhancing 
   application development capabilities. 
 6> Flexibility:
 - Developers can implement various database operations like querying, updating, and 
