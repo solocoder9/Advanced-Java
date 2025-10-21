@@ -32,7 +32,7 @@ The Hotel Reservation System allows users to:
 
 ## Setup Instructions
 
-To get the Hotel Management System running on your local machine, follow these steps:
+To get the Hotel Reservation System running on your local machine, follow these steps:
 
 1. **Prerequisites**:
     - JDK (Java Development Kit) installed.
@@ -42,7 +42,7 @@ To get the Hotel Management System running on your local machine, follow these s
 2. **Clone the Repository**:
 
     ```bash
-    git clone https://github.com/solocoder9/Hotel-Management-System.git
+    git clone https://github.com/solocoder9/Hotel-Reservation-System.git
     ```
 
 3. **Import the Project into Eclipse**:
@@ -70,7 +70,7 @@ To get the Hotel Management System running on your local machine, follow these s
 
 6. **Run the Application**:
     - Right-click on `HotelReservationSystem.java` and select **Run As > Java Application**.
-    - Follow the on-screen prompts to interact with the Hotel Management System.
+    - Follow the on-screen prompts to interact with the Hotel Reservation System.
 
 ## Usage
 
@@ -78,7 +78,7 @@ Upon running the application, a menu will appear, allowing you to select an oper
 
 ## Contributing
 
-Contributions to the Hotel Management System are welcome! To contribute:
+Contributions to the Hotel Reservation System are welcome! To contribute:
 1. Fork the repository.
 2. Create a new feature branch:
     ```bash
