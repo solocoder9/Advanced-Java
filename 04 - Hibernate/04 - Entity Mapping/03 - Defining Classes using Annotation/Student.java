@@ -1,4 +1,4 @@
-package com.tut;
+package com.demo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
